@@ -1,11 +1,44 @@
 <!DOCTYPE html><html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <title>Test Github Embed Script</title>
+    <meta charset="UTF-8" />
+    <title>Scripts: Python, R</title>
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Dosis::latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+    <style>
+      body { font-family: 'Dosis', sans-serif; }
+      .inl { display: inline; }
+      p.cmnt { padding: 10px; background-color: #00bfff; box-shadow: 5px 5px 5px #4682B4; }
+      hr { height: 5px; }
+    </style>
   </head>
   <body>
-    <script src="https://gist.github.com/nick3499/c495bfc9891401dd481b29385339109e.js"></script>
-    <script src="https://gist.github.com/nick3499/51d12ae2af19055f9390a49e974852a1.js"></script>
-    <script src="https://gist.github.com/nick3499/8cf6ab4cf34d278ac6860fd335c5554f.js"></script>
+	<nav id="top">
+	  <a href="#scripts_python">Scripts: Python</a> |
+	</nav>
+	<section><h1>Python</h1>
+      <article>
+	    <h2 class="inl" id="scripts_python">Scripts: Python</h2> &#8679;<a class="inl" href="#top">top</a>&#8679;
+	    <p class="cmnt"># for loop</p>
+        <script src="https://gist.github.com/nick3499/c495bfc9891401dd481b29385339109e.js"></script>
+        <hr>
+        <p class="cmnt"># for loop, conditional</p>
+        <script src="https://gist.github.com/nick3499/51d12ae2af19055f9390a49e974852a1.js"></script>
+        <hr>
+        <p class="cmnt"># exception handling</p>
+        <script src="https://gist.github.com/nick3499/8cf6ab4cf34d278ac6860fd335c5554f.js"></script>
+        <hr>
+      </article>
+    </section>
   </body>
   </html>
