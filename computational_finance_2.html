@@ -128,9 +128,9 @@ $(document).ready(function () {
 <pre class="r"><code>price_1 &lt;- sbux_prices_df[&quot;3/1/1994&quot;, 1]
 price_2 &lt;- sbux_prices_df[&quot;3/1/1995&quot;, 1]
 print(price_1)</code></pre>
-<pre><code>## [1] 1.45</code></pre>
+<pre><code>## [1] NA</code></pre>
 <pre class="r"><code>print(price_2)</code></pre>
-<pre><code>## [1] 1.43</code></pre>
+<pre><code>## [1] NA</code></pre>
 <ul>
 <li>plot <code>Adj.Close</code></li>
 </ul>
@@ -154,10 +154,15 @@ class(sbux_ret) # numeric</code></pre>
 <ul>
 <li>dates as column names</li>
 </ul>
-<p><code>r  names(sbux_ret) &lt;- sbux_df$Date[2:n]  head(sbux_ret)</code></p>
-<p><code>##    4/1/1993    5/3/1993    6/1/1993    7/1/1993    8/2/1993    9/1/1993   ##  0.01769912  0.24347826  0.02097902 -0.03424658  0.02127660  0.13194444</code></p>
-<p><code>r  sbux_ccret &lt;- log(sbux_prices_df[2:n, 1])-log(sbux_prices_df[1:(n-1), 1])  names(sbux_ccret) &lt;- sbux_df[2:n, 1]  head(sbux_ccret)</code></p>
-<p><code>##    4/1/1993    5/3/1993    6/1/1993    7/1/1993    8/2/1993    9/1/1993   ##  0.01754431  0.21791250  0.02076199 -0.03484673  0.02105341  0.12393690</code></p>
+<pre class="r"><code>names(sbux_ret) &lt;- sbux_df$Date[2:n]
+head(sbux_ret)</code></pre>
+<pre><code>##    4/1/1993    5/3/1993    6/1/1993    7/1/1993    8/2/1993    9/1/1993 
+##  0.01769912  0.24347826  0.02097902 -0.03424658  0.02127660  0.13194444</code></pre>
+<pre class="r"><code>sbux_ccret &lt;- log(sbux_prices_df[2:n, 1])-log(sbux_prices_df[1:(n-1), 1])
+names(sbux_ccret) &lt;- sbux_df[2:n, 1]
+head(sbux_ccret)</code></pre>
+<pre><code>##    4/1/1993    5/3/1993    6/1/1993    7/1/1993    8/2/1993    9/1/1993 
+##  0.01754431  0.21791250  0.02076199 -0.03484673  0.02105341  0.12393690</code></pre>
 
 
 
