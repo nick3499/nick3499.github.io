@@ -12,6 +12,6 @@ _Computational Finance .Rmd to HTML_
  - [computational_finance_3.html](https://github.com/nick3499/nick3499.github.io/blob/master/computational_finance_3.html)
 
 _Scripts: Python, R_
- - [scripts_python_r.html](https://github.com/nick3499/nick3499.github.io/blob/master/scripts_python_r.html)
+ - [scripts_python_r.html](https://nick3499.github.io/scripts_python_r.html)
  - [graph01.png](https://github.com/nick3499/nick3499.github.io/blob/master/graph01.png)
  - [prod_sales_inv.png](https://github.com/nick3499/nick3499.github.io/blob/master/prod_sales_inv.png)
