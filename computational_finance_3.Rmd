@@ -1,0 +1,45 @@
+---
+title: "Computational Finance | pg.3"
+date: "October 23, 2016"
+---
+ - compare simple and continuously compounded returns
+```{r}
+head(cbind(sbux_ret, sbux_ccret))
+```
+ - `plot` monthly returns
+```{r}
+plot(sbux_ret, type="l", col="blue", lwd=2, ylab="Return",
+     main="Monthly Returns on Starbucks (SBUX)")
+abline(h=0)  # horizontal zero line
+legend(x="bottomright", legend=c("Simple", "CC"), lty=1, lwd=2,
+       col=c("blue", "red"))
+lines(sbux_ccret, type="l", col="red", lwd=2)
+sbux_gret <- sbux_ret+1  # gross returns
+sbux_fv <- cumprod(sbux_gret)  # future values
+```
+ - `plot` evolution of the $1 invested in SBUX as a function of time
+```{r}
+plot(sbux_fv, type="l", col="blue", lwd=2, ylab="Dollars (USD)",
+     main="Future Value (FV): $1 Invested in Starbucks (SBUX)")
+```
+ - `sbux` dataframe
+```{r}
+index1 <- which(sbux_df$Date=="12/1/2004")
+index2 <- which(sbux_df$Date=="12/1/2005")
+sbux <- sbux_df$Adj.Close[index1:index2]
+names(sbux) <- sbux_df[index1:index2, 'Date']
+(sbux[2]-sbux[1])/sbux[1]  # monthly return
+log(sbux[2])-log(sbux[1])  # continuously compunded monthly return
+r <- (sbux[2]-sbux[1])/sbux[1]
+     (1+r)^12-1  # simple monthly return
+```
+ - simple annual return
+```{r}
+rets <- (sbux[2:length(sbux)]-sbux[1:(length(sbux)-1)])/sbux[1:(length(sbux)-1)]
+gross_rets <- 1+rets
+cumprod(gross_rets)-1
+```
+ - annual continuously compounded return
+```{r}
+log(sbux[length(sbux)])-log(sbux[1])
+```
