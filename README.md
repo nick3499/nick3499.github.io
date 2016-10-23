@@ -1,7 +1,7 @@
 # nick3499.github.io
 ## Scripts: Python and R
 _Navigation_
- - [Index | nick3499.github.io](https://github.com/nick3499/nick3499.github.io/blob/master/index.html)
+ - [Index | nick3499.github.io](https://nick3499.github.io/)
 
 _Computational Finance .Rmd to HTML_
  - [computational_finance_1.Rmd](https://github.com/nick3499/nick3499.github.io/blob/master/computational_finance_1.Rmd)
