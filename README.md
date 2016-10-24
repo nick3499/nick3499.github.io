@@ -17,6 +17,5 @@ _Scripts: Python, R_
  - [prod_sales_inv.png](https://github.com/nick3499/nick3499.github.io/blob/master/prod_sales_inv.png)
  
 _Render .Rmd_
- - `setwd('/home/foo/Documents/R/foo/')`
  - `library(rmarkdown)`
  - `render('computational_finance_1.Rmd')`
