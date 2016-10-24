@@ -15,6 +15,9 @@ _Scripts: Python, R_
  - [scripts_python_r.html](https://nick3499.github.io/scripts_python_r.html)
  - [graph01.png](https://github.com/nick3499/nick3499.github.io/blob/master/graph01.png)
  - [prod_sales_inv.png](https://github.com/nick3499/nick3499.github.io/blob/master/prod_sales_inv.png)
+
+_Plots: R_
+ - [r_plot_1.html](https://github.com/nick3499/nick3499.github.io/blob/master/r_plot_1.html)
  
 _Render .Rmd_
  - `library(rmarkdown)`
