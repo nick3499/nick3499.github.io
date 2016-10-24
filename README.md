@@ -11,6 +11,11 @@ _Computational Finance .Rmd to HTML_
  - [computational_finance_3.Rmd](https://github.com/nick3499/nick3499.github.io/blob/master/computational_finance_3.Rmd)
  - [computational_finance_3.html](https://github.com/nick3499/nick3499.github.io/blob/master/computational_finance_3.html)
 
+_Chicago Forecast_
+ - [chicago_forecast.html](https://nick3499.github.io/chicago_forecast.html)
+ - [chicago_forecast.Rmd](https://github.com/nick3499/nick3499.github.io/blob/master/chicago_forecast.Rmd)
+ - [.Renviron](https://github.com/nick3499/nick3499.github.io/blob/master/.Renviron)
+
 _Scripts: Python, R_
  - [scripts_python_r.html](https://nick3499.github.io/scripts_python_r.html)
  - [graph01.png](https://github.com/nick3499/nick3499.github.io/blob/master/graph01.png)
