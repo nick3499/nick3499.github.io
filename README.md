@@ -20,6 +20,11 @@ _Scripts: Python, R_
  - [scripts_python_r.html](https://nick3499.github.io/scripts_python_r.html)
  - [graph01.png](https://github.com/nick3499/nick3499.github.io/blob/master/graph01.png)
  - [prod_sales_inv.png](https://github.com/nick3499/nick3499.github.io/blob/master/prod_sales_inv.png)
+ 
+_Author: Peter Hall - aRxiv_
+ - [peter_hall.R](https://github.com/nick3499/nick3499.github.io/blob/master/peter_hall.R)
+ - [peter_hall.Rmd](https://github.com/nick3499/nick3499.github.io/blob/master/peter_hall.Rmd)
+ - [peter_hall.html](https://nick3499.github.io/peter_hall.html)
 
 _Plots: R_
  - [r_plot_1.html](https://nick3499.github.io/r_plot_1.html)
