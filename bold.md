@@ -2,7 +2,6 @@
 title: "BOLD Taxonomy DNA Data"
 author: "nick3499"
 date: "2016-10-29"
-output: html_document
 ---
  - access BOLD insect taxonomy data:
 
