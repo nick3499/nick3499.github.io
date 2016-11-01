@@ -10,3 +10,4 @@
  - `knit('foo.Rmd')` in `library(knitr)` (if `foo.Rmd` does not generate images)
  - `markdownToHTML('foo.md')` in `library(markdown)` (if `foo.Rmd` does not generate images)
  - since `foo.html` is all that will be listed in `<nav>`, such files as `.md`, `.Rmd`, `.Renviron`, etc. have been excluded.
+ - store API key in `.Renviron` and use `Sys.getenv()` to get it
