@@ -1,0 +1,7132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<pre><code class="r">library(birdnik)
+key = Sys.getenv(&#39;WORDNIK_API_KEY&#39;)  # stored in .Renviron
+words &lt;- c(&#39;cat&#39;, &#39;dog&#39;)
+word_definitions(key, words)
+</code></pre>
+
+<pre><code>## [[1]]
+## [[1]][[1]]
+## [[1]][[1]]$textProns
+## list()
+## 
+## [[1]][[1]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[1]]$exampleUses
+## list()
+## 
+## [[1]][[1]]$relatedWords
+## list()
+## 
+## [[1]][[1]]$labels
+## list()
+## 
+## [[1]][[1]]$citations
+## list()
+## 
+## [[1]][[1]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[1]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[1]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[1]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[1]]$text
+## [1] &quot;A small carnivorous mammal (Felis catus or F. domesticus) domesticated since early times as a catcher of rats and mice and as a pet and existing in several distinctive breeds and varieties.&quot;
+## 
+## [[1]][[1]]$score
+## [1] 0
+## 
+## 
+## [[1]][[2]]
+## [[1]][[2]]$textProns
+## list()
+## 
+## [[1]][[2]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[2]]$exampleUses
+## list()
+## 
+## [[1]][[2]]$relatedWords
+## list()
+## 
+## [[1]][[2]]$labels
+## list()
+## 
+## [[1]][[2]]$citations
+## list()
+## 
+## [[1]][[2]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[2]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[2]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[2]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[1]][[2]]$text
+## [1] &quot;Any of various other carnivorous mammals of the family Felidae, which includes the lion, tiger, leopard, and lynx.&quot;
+## 
+## [[1]][[2]]$score
+## [1] 0
+## 
+## 
+## [[1]][[3]]
+## [[1]][[3]]$textProns
+## list()
+## 
+## [[1]][[3]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[3]]$exampleUses
+## list()
+## 
+## [[1]][[3]]$relatedWords
+## list()
+## 
+## [[1]][[3]]$labels
+## list()
+## 
+## [[1]][[3]]$citations
+## list()
+## 
+## [[1]][[3]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[3]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[3]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[3]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[1]][[3]]$text
+## [1] &quot;The fur of a domestic cat.&quot;
+## 
+## [[1]][[3]]$score
+## [1] 0
+## 
+## 
+## [[1]][[4]]
+## [[1]][[4]]$textProns
+## list()
+## 
+## [[1]][[4]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[4]]$exampleUses
+## list()
+## 
+## [[1]][[4]]$relatedWords
+## list()
+## 
+## [[1]][[4]]$labels
+## list()
+## 
+## [[1]][[4]]$citations
+## list()
+## 
+## [[1]][[4]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[4]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[4]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[4]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[1]][[4]]$text
+## [1] &quot;Informal   A woman who is regarded as spiteful.&quot;
+## 
+## [[1]][[4]]$score
+## [1] 0
+## 
+## 
+## [[1]][[5]]
+## [[1]][[5]]$textProns
+## list()
+## 
+## [[1]][[5]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[5]]$exampleUses
+## list()
+## 
+## [[1]][[5]]$relatedWords
+## list()
+## 
+## [[1]][[5]]$labels
+## list()
+## 
+## [[1]][[5]]$citations
+## list()
+## 
+## [[1]][[5]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[5]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[5]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[5]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[1]][[5]]$text
+## [1] &quot;Slang   A person, especially a man.&quot;
+## 
+## [[1]][[5]]$score
+## [1] 0
+## 
+## 
+## [[1]][[6]]
+## [[1]][[6]]$textProns
+## list()
+## 
+## [[1]][[6]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[6]]$exampleUses
+## list()
+## 
+## [[1]][[6]]$relatedWords
+## list()
+## 
+## [[1]][[6]]$labels
+## list()
+## 
+## [[1]][[6]]$citations
+## list()
+## 
+## [[1]][[6]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[6]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[6]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[6]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[1]][[6]]$text
+## [1] &quot;Slang   A player or devotee of jazz music.&quot;
+## 
+## [[1]][[6]]$score
+## [1] 0
+## 
+## 
+## [[1]][[7]]
+## [[1]][[7]]$textProns
+## list()
+## 
+## [[1]][[7]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[7]]$exampleUses
+## list()
+## 
+## [[1]][[7]]$relatedWords
+## list()
+## 
+## [[1]][[7]]$labels
+## list()
+## 
+## [[1]][[7]]$citations
+## list()
+## 
+## [[1]][[7]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[7]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[7]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[7]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[1]][[7]]$text
+## [1] &quot;A cat-o&#39;-nine-tails.&quot;
+## 
+## [[1]][[7]]$score
+## [1] 0
+## 
+## 
+## [[1]][[8]]
+## [[1]][[8]]$textProns
+## list()
+## 
+## [[1]][[8]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[8]]$exampleUses
+## list()
+## 
+## [[1]][[8]]$relatedWords
+## list()
+## 
+## [[1]][[8]]$labels
+## list()
+## 
+## [[1]][[8]]$citations
+## list()
+## 
+## [[1]][[8]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[8]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[8]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[8]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[1]][[8]]$text
+## [1] &quot;A catfish.&quot;
+## 
+## [[1]][[8]]$score
+## [1] 0
+## 
+## 
+## [[1]][[9]]
+## [[1]][[9]]$textProns
+## list()
+## 
+## [[1]][[9]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[9]]$exampleUses
+## list()
+## 
+## [[1]][[9]]$relatedWords
+## list()
+## 
+## [[1]][[9]]$labels
+## list()
+## 
+## [[1]][[9]]$citations
+## list()
+## 
+## [[1]][[9]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[9]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[9]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[9]]$sequence
+## [1] &quot;8&quot;
+## 
+## [[1]][[9]]$text
+## [1] &quot;Nautical   A cathead.&quot;
+## 
+## [[1]][[9]]$score
+## [1] 0
+## 
+## 
+## [[1]][[10]]
+## [[1]][[10]]$textProns
+## list()
+## 
+## [[1]][[10]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[10]]$exampleUses
+## list()
+## 
+## [[1]][[10]]$relatedWords
+## list()
+## 
+## [[1]][[10]]$labels
+## list()
+## 
+## [[1]][[10]]$citations
+## list()
+## 
+## [[1]][[10]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[10]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[10]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[10]]$sequence
+## [1] &quot;9&quot;
+## 
+## [[1]][[10]]$text
+## [1] &quot;Nautical   A device for raising an anchor to the cathead.&quot;
+## 
+## [[1]][[10]]$score
+## [1] 0
+## 
+## 
+## [[1]][[11]]
+## [[1]][[11]]$textProns
+## list()
+## 
+## [[1]][[11]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[11]]$exampleUses
+## list()
+## 
+## [[1]][[11]]$relatedWords
+## list()
+## 
+## [[1]][[11]]$labels
+## list()
+## 
+## [[1]][[11]]$citations
+## list()
+## 
+## [[1]][[11]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[11]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[11]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[11]]$sequence
+## [1] &quot;10&quot;
+## 
+## [[1]][[11]]$text
+## [1] &quot;Nautical   A catboat.&quot;
+## 
+## [[1]][[11]]$score
+## [1] 0
+## 
+## 
+## [[1]][[12]]
+## [[1]][[12]]$textProns
+## list()
+## 
+## [[1]][[12]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[12]]$exampleUses
+## list()
+## 
+## [[1]][[12]]$relatedWords
+## list()
+## 
+## [[1]][[12]]$labels
+## list()
+## 
+## [[1]][[12]]$citations
+## list()
+## 
+## [[1]][[12]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[12]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[12]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[12]]$sequence
+## [1] &quot;11&quot;
+## 
+## [[1]][[12]]$text
+## [1] &quot;Nautical   A catamaran.&quot;
+## 
+## [[1]][[12]]$score
+## [1] 0
+## 
+## 
+## [[1]][[13]]
+## [[1]][[13]]$textProns
+## list()
+## 
+## [[1]][[13]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[13]]$exampleUses
+## list()
+## 
+## [[1]][[13]]$relatedWords
+## list()
+## 
+## [[1]][[13]]$labels
+## list()
+## 
+## [[1]][[13]]$citations
+## list()
+## 
+## [[1]][[13]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[13]]$partOfSpeech
+## [1] &quot;verb-transitive&quot;
+## 
+## [[1]][[13]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[13]]$sequence
+## [1] &quot;12&quot;
+## 
+## [[1]][[13]]$text
+## [1] &quot;Nautical   To hoist an anchor to (the cathead).&quot;
+## 
+## [[1]][[13]]$score
+## [1] 0
+## 
+## 
+## [[1]][[14]]
+## [[1]][[14]]$textProns
+## list()
+## 
+## [[1]][[14]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[14]]$exampleUses
+## list()
+## 
+## [[1]][[14]]$relatedWords
+## list()
+## 
+## [[1]][[14]]$labels
+## list()
+## 
+## [[1]][[14]]$citations
+## list()
+## 
+## [[1]][[14]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[14]]$partOfSpeech
+## [1] &quot;verb-intransitive&quot;
+## 
+## [[1]][[14]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[14]]$sequence
+## [1] &quot;13&quot;
+## 
+## [[1]][[14]]$text
+## [1] &quot;Slang   To look for sexual partners; have an affair or affairs: \&quot;catting around with every lady in sight”  ( Gore Vidal). &quot;
+## 
+## [[1]][[14]]$score
+## [1] 0
+## 
+## 
+## [[1]][[15]]
+## [[1]][[15]]$textProns
+## list()
+## 
+## [[1]][[15]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[1]][[15]]$exampleUses
+## list()
+## 
+## [[1]][[15]]$relatedWords
+## list()
+## 
+## [[1]][[15]]$labels
+## list()
+## 
+## [[1]][[15]]$citations
+## list()
+## 
+## [[1]][[15]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[15]]$partOfSpeech
+## [1] &quot;idiom&quot;
+## 
+## [[1]][[15]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[1]][[15]]$sequence
+## [1] &quot;14&quot;
+## 
+## [[1]][[15]]$text
+## [1] &quot;let the cat out of the bag  To let a secret be known.&quot;
+## 
+## [[1]][[15]]$score
+## [1] 0
+## 
+## 
+## [[1]][[16]]
+## [[1]][[16]]$textProns
+## list()
+## 
+## [[1]][[16]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[16]]$exampleUses
+## list()
+## 
+## [[1]][[16]]$relatedWords
+## list()
+## 
+## [[1]][[16]]$labels
+## list()
+## 
+## [[1]][[16]]$citations
+## list()
+## 
+## [[1]][[16]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[16]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[16]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[16]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[16]]$text
+## [1] &quot;Any similar animal of the family Felidae, which includes lions, tigers, bobcats, etc.&quot;
+## 
+## [[1]][[16]]$score
+## [1] 0
+## 
+## 
+## [[1]][[17]]
+## [[1]][[17]]$textProns
+## list()
+## 
+## [[1]][[17]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[17]]$exampleUses
+## list()
+## 
+## [[1]][[17]]$relatedWords
+## list()
+## 
+## [[1]][[17]]$labels
+## list()
+## 
+## [[1]][[17]]$citations
+## list()
+## 
+## [[1]][[17]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[17]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[17]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[17]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[17]]$text
+## [1] &quot;A catfish.&quot;
+## 
+## [[1]][[17]]$score
+## [1] 0
+## 
+## 
+## [[1]][[18]]
+## [[1]][[18]]$textProns
+## list()
+## 
+## [[1]][[18]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[18]]$exampleUses
+## list()
+## 
+## [[1]][[18]]$relatedWords
+## list()
+## 
+## [[1]][[18]]$labels
+## list()
+## 
+## [[1]][[18]]$citations
+## list()
+## 
+## [[1]][[18]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[18]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[18]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[18]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[18]]$text
+## [1] &quot;An enthusiast or player of jazz.&quot;
+## 
+## [[1]][[18]]$score
+## [1] 0
+## 
+## 
+## [[1]][[19]]
+## [[1]][[19]]$textProns
+## list()
+## 
+## [[1]][[19]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[19]]$exampleUses
+## list()
+## 
+## [[1]][[19]]$relatedWords
+## list()
+## 
+## [[1]][[19]]$labels
+## [[1]][[19]]$labels[[1]]
+## [[1]][[19]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[1]][[19]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[1]][[19]]$citations
+## list()
+## 
+## [[1]][[19]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[19]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[19]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[19]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[19]]$text
+## [1] &quot;A person (usually male).&quot;
+## 
+## [[1]][[19]]$score
+## [1] 0
+## 
+## 
+## [[1]][[20]]
+## [[1]][[20]]$textProns
+## list()
+## 
+## [[1]][[20]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[20]]$exampleUses
+## list()
+## 
+## [[1]][[20]]$relatedWords
+## list()
+## 
+## [[1]][[20]]$labels
+## [[1]][[20]]$labels[[1]]
+## [[1]][[20]]$labels[[1]]$text
+## [1] &quot;nautical&quot;
+## 
+## [[1]][[20]]$labels[[1]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[1]][[20]]$citations
+## list()
+## 
+## [[1]][[20]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[20]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[20]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[20]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[20]]$text
+## [1] &quot;A strong tackle used to hoist an anchor to the cathead of a ship.&quot;
+## 
+## [[1]][[20]]$score
+## [1] 0
+## 
+## 
+## [[1]][[21]]
+## [[1]][[21]]$textProns
+## list()
+## 
+## [[1]][[21]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[21]]$exampleUses
+## list()
+## 
+## [[1]][[21]]$relatedWords
+## list()
+## 
+## [[1]][[21]]$labels
+## [[1]][[21]]$labels[[1]]
+## [[1]][[21]]$labels[[1]]$text
+## [1] &quot;nautical&quot;
+## 
+## [[1]][[21]]$labels[[1]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[1]][[21]]$citations
+## list()
+## 
+## [[1]][[21]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[21]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[21]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[21]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[21]]$text
+## [1] &quot;Contraction of cat-o&#39;-nine-tails.&quot;
+## 
+## [[1]][[21]]$score
+## [1] 0
+## 
+## 
+## [[1]][[22]]
+## [[1]][[22]]$textProns
+## list()
+## 
+## [[1]][[22]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[22]]$exampleUses
+## list()
+## 
+## [[1]][[22]]$relatedWords
+## list()
+## 
+## [[1]][[22]]$labels
+## [[1]][[22]]$labels[[1]]
+## [[1]][[22]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[1]][[22]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[1]][[22]]$citations
+## list()
+## 
+## [[1]][[22]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[22]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[22]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[22]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[22]]$text
+## [1] &quot;Any of a variety of earth-moving machines. (from their manufacturer Caterpillar Inc.)&quot;
+## 
+## [[1]][[22]]$score
+## [1] 0
+## 
+## 
+## [[1]][[23]]
+## [[1]][[23]]$textProns
+## list()
+## 
+## [[1]][[23]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[23]]$exampleUses
+## list()
+## 
+## [[1]][[23]]$relatedWords
+## list()
+## 
+## [[1]][[23]]$labels
+## [[1]][[23]]$labels[[1]]
+## [[1]][[23]]$labels[[1]]$text
+## [1] &quot;archaic&quot;
+## 
+## [[1]][[23]]$labels[[1]]$type
+## [1] &quot;chronological&quot;
+## 
+## 
+## 
+## [[1]][[23]]$citations
+## list()
+## 
+## [[1]][[23]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[23]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[23]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[23]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[23]]$text
+## [1] &quot;A sturdy merchant sailing vessel (now only in \&quot;catboat\&quot;).&quot;
+## 
+## [[1]][[23]]$score
+## [1] 0
+## 
+## 
+## [[1]][[24]]
+## [[1]][[24]]$textProns
+## list()
+## 
+## [[1]][[24]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[24]]$exampleUses
+## list()
+## 
+## [[1]][[24]]$relatedWords
+## list()
+## 
+## [[1]][[24]]$labels
+## [[1]][[24]]$labels[[1]]
+## [[1]][[24]]$labels[[1]]$text
+## [1] &quot;archaic&quot;
+## 
+## [[1]][[24]]$labels[[1]]$type
+## [1] &quot;chronological&quot;
+## 
+## 
+## [[1]][[24]]$labels[[2]]
+## [[1]][[24]]$labels[[2]]$text
+## [1] &quot;uncountable&quot;
+## 
+## [[1]][[24]]$labels[[2]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## 
+## [[1]][[24]]$citations
+## list()
+## 
+## [[1]][[24]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[24]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[24]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[24]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[24]]$text
+## [1] &quot;The game of \&quot;trap and ball\&quot; (also called \&quot;cat and dog\&quot;).&quot;
+## 
+## [[1]][[24]]$score
+## [1] 0
+## 
+## 
+## [[1]][[25]]
+## [[1]][[25]]$textProns
+## list()
+## 
+## [[1]][[25]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[25]]$exampleUses
+## list()
+## 
+## [[1]][[25]]$relatedWords
+## list()
+## 
+## [[1]][[25]]$labels
+## [[1]][[25]]$labels[[1]]
+## [[1]][[25]]$labels[[1]]$text
+## [1] &quot;archaic&quot;
+## 
+## [[1]][[25]]$labels[[1]]$type
+## [1] &quot;chronological&quot;
+## 
+## 
+## [[1]][[25]]$labels[[2]]
+## [[1]][[25]]$labels[[2]]$text
+## [1] &quot;uncountable&quot;
+## 
+## [[1]][[25]]$labels[[2]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## 
+## [[1]][[25]]$citations
+## list()
+## 
+## [[1]][[25]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[25]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[25]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[25]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[25]]$text
+## [1] &quot;The trap of the game of \&quot;trap and ball\&quot;.&quot;
+## 
+## [[1]][[25]]$score
+## [1] 0
+## 
+## 
+## [[1]][[26]]
+## [[1]][[26]]$textProns
+## list()
+## 
+## [[1]][[26]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[26]]$exampleUses
+## list()
+## 
+## [[1]][[26]]$relatedWords
+## list()
+## 
+## [[1]][[26]]$labels
+## [[1]][[26]]$labels[[1]]
+## [[1]][[26]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[1]][[26]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## [[1]][[26]]$labels[[2]]
+## [[1]][[26]]$labels[[2]]$text
+## [1] &quot;vulgar&quot;
+## 
+## [[1]][[26]]$labels[[2]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## [[1]][[26]]$labels[[3]]
+## [[1]][[26]]$labels[[3]]$text
+## [1] &quot;African American Vernacular&quot;
+## 
+## [[1]][[26]]$labels[[3]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[1]][[26]]$citations
+## list()
+## 
+## [[1]][[26]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[26]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[26]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[26]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[26]]$text
+## [1] &quot;A vagina; female external genitalia&quot;
+## 
+## [[1]][[26]]$score
+## [1] 0
+## 
+## 
+## [[1]][[27]]
+## [[1]][[27]]$textProns
+## list()
+## 
+## [[1]][[27]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[27]]$exampleUses
+## list()
+## 
+## [[1]][[27]]$relatedWords
+## list()
+## 
+## [[1]][[27]]$labels
+## [[1]][[27]]$labels[[1]]
+## [[1]][[27]]$labels[[1]]$text
+## [1] &quot;nautical&quot;
+## 
+## [[1]][[27]]$labels[[1]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[1]][[27]]$citations
+## list()
+## 
+## [[1]][[27]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[27]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[1]][[27]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[27]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[27]]$text
+## [1] &quot;To hoist (the anchor) by its ring so that it hangs at the cathead.&quot;
+## 
+## [[1]][[27]]$score
+## [1] 0
+## 
+## 
+## [[1]][[28]]
+## [[1]][[28]]$textProns
+## list()
+## 
+## [[1]][[28]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[28]]$exampleUses
+## list()
+## 
+## [[1]][[28]]$relatedWords
+## list()
+## 
+## [[1]][[28]]$labels
+## [[1]][[28]]$labels[[1]]
+## [[1]][[28]]$labels[[1]]$text
+## [1] &quot;nautical&quot;
+## 
+## [[1]][[28]]$labels[[1]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[1]][[28]]$citations
+## list()
+## 
+## [[1]][[28]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[28]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[1]][[28]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[28]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[28]]$text
+## [1] &quot;To flog with a cat-o&#39;-nine-tails.&quot;
+## 
+## [[1]][[28]]$score
+## [1] 0
+## 
+## 
+## [[1]][[29]]
+## [[1]][[29]]$textProns
+## list()
+## 
+## [[1]][[29]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[29]]$exampleUses
+## list()
+## 
+## [[1]][[29]]$relatedWords
+## list()
+## 
+## [[1]][[29]]$labels
+## [[1]][[29]]$labels[[1]]
+## [[1]][[29]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[1]][[29]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[1]][[29]]$citations
+## list()
+## 
+## [[1]][[29]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[29]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[1]][[29]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[29]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[29]]$text
+## [1] &quot;To vomit something.&quot;
+## 
+## [[1]][[29]]$score
+## [1] 0
+## 
+## 
+## [[1]][[30]]
+## [[1]][[30]]$textProns
+## list()
+## 
+## [[1]][[30]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[30]]$exampleUses
+## list()
+## 
+## [[1]][[30]]$relatedWords
+## list()
+## 
+## [[1]][[30]]$labels
+## list()
+## 
+## [[1]][[30]]$citations
+## list()
+## 
+## [[1]][[30]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[30]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[30]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[30]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[30]]$text
+## [1] &quot;A catamaran.&quot;
+## 
+## [[1]][[30]]$score
+## [1] 0
+## 
+## 
+## [[1]][[31]]
+## [[1]][[31]]$textProns
+## list()
+## 
+## [[1]][[31]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[31]]$exampleUses
+## list()
+## 
+## [[1]][[31]]$relatedWords
+## list()
+## 
+## [[1]][[31]]$labels
+## [[1]][[31]]$labels[[1]]
+## [[1]][[31]]$labels[[1]]$text
+## [1] &quot;computing&quot;
+## 
+## [[1]][[31]]$labels[[1]]$type
+## [1] &quot;field&quot;
+## 
+## 
+## 
+## [[1]][[31]]$citations
+## list()
+## 
+## [[1]][[31]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[31]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[31]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[31]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[31]]$text
+## [1] &quot;A ‘catenate’ program and command in Unix that reads one or more files and directs their content to an output device.&quot;
+## 
+## [[1]][[31]]$score
+## [1] 0
+## 
+## 
+## [[1]][[32]]
+## [[1]][[32]]$textProns
+## list()
+## 
+## [[1]][[32]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[32]]$exampleUses
+## list()
+## 
+## [[1]][[32]]$relatedWords
+## list()
+## 
+## [[1]][[32]]$labels
+## [[1]][[32]]$labels[[1]]
+## [[1]][[32]]$labels[[1]]$text
+## [1] &quot;transitive&quot;
+## 
+## [[1]][[32]]$labels[[1]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## [[1]][[32]]$labels[[2]]
+## [[1]][[32]]$labels[[2]]$text
+## [1] &quot;computing&quot;
+## 
+## [[1]][[32]]$labels[[2]]$type
+## [1] &quot;field&quot;
+## 
+## 
+## 
+## [[1]][[32]]$citations
+## list()
+## 
+## [[1]][[32]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[32]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[1]][[32]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[32]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[32]]$text
+## [1] &quot;To apply the cat command to (one or more files).&quot;
+## 
+## [[1]][[32]]$score
+## [1] 0
+## 
+## 
+## [[1]][[33]]
+## [[1]][[33]]$textProns
+## list()
+## 
+## [[1]][[33]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[33]]$exampleUses
+## list()
+## 
+## [[1]][[33]]$relatedWords
+## list()
+## 
+## [[1]][[33]]$labels
+## list()
+## 
+## [[1]][[33]]$citations
+## list()
+## 
+## [[1]][[33]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[33]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[1]][[33]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[33]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[33]]$text
+## [1] &quot;To dump large amounts of data on (an unprepared target) usually with no intention of browsing it carefully.&quot;
+## 
+## [[1]][[33]]$score
+## [1] 0
+## 
+## 
+## [[1]][[34]]
+## [[1]][[34]]$textProns
+## list()
+## 
+## [[1]][[34]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[34]]$exampleUses
+## list()
+## 
+## [[1]][[34]]$relatedWords
+## list()
+## 
+## [[1]][[34]]$labels
+## [[1]][[34]]$labels[[1]]
+## [[1]][[34]]$labels[[1]]$text
+## [1] &quot;Ireland&quot;
+## 
+## [[1]][[34]]$labels[[1]]$type
+## [1] &quot;region&quot;
+## 
+## 
+## [[1]][[34]]$labels[[2]]
+## [[1]][[34]]$labels[[2]]$text
+## [1] &quot;informal&quot;
+## 
+## [[1]][[34]]$labels[[2]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[1]][[34]]$citations
+## list()
+## 
+## [[1]][[34]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[34]]$partOfSpeech
+## [1] &quot;adjective&quot;
+## 
+## [[1]][[34]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[34]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[34]]$text
+## [1] &quot;terrible, disastrous.&quot;
+## 
+## [[1]][[34]]$score
+## [1] 0
+## 
+## 
+## [[1]][[35]]
+## [[1]][[35]]$textProns
+## list()
+## 
+## [[1]][[35]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[35]]$exampleUses
+## list()
+## 
+## [[1]][[35]]$relatedWords
+## list()
+## 
+## [[1]][[35]]$labels
+## list()
+## 
+## [[1]][[35]]$citations
+## list()
+## 
+## [[1]][[35]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[35]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[35]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[35]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[35]]$text
+## [1] &quot;A street name of the drug methcathinone.&quot;
+## 
+## [[1]][[35]]$score
+## [1] 0
+## 
+## 
+## [[1]][[36]]
+## [[1]][[36]]$textProns
+## list()
+## 
+## [[1]][[36]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[1]][[36]]$exampleUses
+## list()
+## 
+## [[1]][[36]]$relatedWords
+## list()
+## 
+## [[1]][[36]]$labels
+## [[1]][[36]]$labels[[1]]
+## [[1]][[36]]$labels[[1]]$text
+## [1] &quot;military&quot;
+## 
+## [[1]][[36]]$labels[[1]]$type
+## [1] &quot;field&quot;
+## 
+## 
+## [[1]][[36]]$labels[[2]]
+## [[1]][[36]]$labels[[2]]$text
+## [1] &quot;naval&quot;
+## 
+## [[1]][[36]]$labels[[2]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[1]][[36]]$citations
+## list()
+## 
+## [[1]][[36]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[36]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[36]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[1]][[36]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[1]][[36]]$text
+## [1] &quot;A catapult.&quot;
+## 
+## [[1]][[36]]$score
+## [1] 0
+## 
+## 
+## [[1]][[37]]
+## [[1]][[37]]$textProns
+## list()
+## 
+## [[1]][[37]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[37]]$exampleUses
+## list()
+## 
+## [[1]][[37]]$relatedWords
+## list()
+## 
+## [[1]][[37]]$labels
+## [[1]][[37]]$labels[[1]]
+## [[1]][[37]]$labels[[1]]$text
+## [1] &quot;(Zoöl.)&quot;
+## 
+## [[1]][[37]]$labels[[1]]$type
+## [1] &quot;fld&quot;
+## 
+## 
+## 
+## [[1]][[37]]$citations
+## [[1]][[37]]$citations[[1]]
+## [[1]][[37]]$citations[[1]]$source
+## [1] &quot;Mark Derr (N. Y. Times, Nov. 2, 1999, Science Times p. F2).&quot;
+## 
+## [[1]][[37]]$citations[[1]]$cite
+## [1] &quot;Laying aside their often rancorous debate over how best to preserve the Florida panther, state and federal wildlife officials, environmentalists, and independent scientists endorsed the proposal, and in 1995 the eight cats [female Texas cougars] were brought from Texas and released… .\n  Uprooted from the arid hills of West Texas, three of the imports have died, but the remaining five adapted to swamp life and have each given birth to at least one litter of kittens.&quot;
+## 
+## 
+## 
+## [[1]][[37]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[37]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[37]]$notes
+## [[1]][[37]]$notes[[1]]
+## [[1]][[37]]$notes[[1]]$value
+## [1] &quot;☞ The domestic cat includes many varieties named from their place of origin or from some peculiarity; as, the Angora cat; the Maltese cat; the Manx cat; the Siamese cat.&quot;
+## 
+## [[1]][[37]]$notes[[1]]$pos
+## [1] 0
+## 
+## [[1]][[37]]$notes[[1]]$appliesTo
+## list()
+## 
+## 
+## 
+## [[1]][[37]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[37]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[37]]$seqString
+## [1] &quot;1.&quot;
+## 
+## [[1]][[37]]$text
+## [1] &quot;Any animal belonging to the natural family Felidae, and in particular to the various species of the genera Felis, Panthera, and Lynx. The domestic cat is Felis domestica. The European wild cat (Felis catus) is much larger than the domestic cat. In the United States the name wild cat is commonly applied to the bay lynx (Lynx rufus). The larger felines, such as the lion, tiger, leopard, and cougar, are often referred to as cats, and sometimes as big cats. See wild cat, and tiger cat.&quot;
+## 
+## [[1]][[37]]$score
+## [1] 0
+## 
+## 
+## [[1]][[38]]
+## [[1]][[38]]$textProns
+## list()
+## 
+## [[1]][[38]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[38]]$exampleUses
+## list()
+## 
+## [[1]][[38]]$relatedWords
+## list()
+## 
+## [[1]][[38]]$labels
+## [[1]][[38]]$labels[[1]]
+## [[1]][[38]]$labels[[1]]$text
+## [1] &quot;(Naut.)&quot;
+## 
+## [[1]][[38]]$labels[[1]]$type
+## [1] &quot;fld&quot;
+## 
+## 
+## 
+## [[1]][[38]]$citations
+## list()
+## 
+## [[1]][[38]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[38]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[38]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[38]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[1]][[38]]$seqString
+## [1] &quot;2.&quot;
+## 
+## [[1]][[38]]$score
+## [1] 0
+## 
+## 
+## [[1]][[39]]
+## [[1]][[39]]$textProns
+## list()
+## 
+## [[1]][[39]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[39]]$exampleUses
+## list()
+## 
+## [[1]][[39]]$relatedWords
+## list()
+## 
+## [[1]][[39]]$labels
+## list()
+## 
+## [[1]][[39]]$citations
+## [[1]][[39]]$citations[[1]]
+## [[1]][[39]]$citations[[1]]$source
+## [1] &quot;Totten.&quot;
+## 
+## 
+## 
+## [[1]][[39]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[39]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[39]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[39]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[1]][[39]]$seqString
+## [1] &quot;2 (a)&quot;
+## 
+## [[1]][[39]]$text
+## [1] &quot;A strong vessel with a narrow stern, projecting quarters, and deep waist. It is employed in the coal and timber trade.&quot;
+## 
+## [[1]][[39]]$score
+## [1] 0
+## 
+## 
+## [[1]][[40]]
+## [[1]][[40]]$textProns
+## list()
+## 
+## [[1]][[40]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[40]]$exampleUses
+## list()
+## 
+## [[1]][[40]]$relatedWords
+## list()
+## 
+## [[1]][[40]]$labels
+## list()
+## 
+## [[1]][[40]]$citations
+## [[1]][[40]]$citations[[1]]
+## [[1]][[40]]$citations[[1]]$source
+## [1] &quot;Totten.&quot;
+## 
+## 
+## 
+## [[1]][[40]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[40]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[40]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[40]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[1]][[40]]$seqString
+## [1] &quot;2 (b)&quot;
+## 
+## [[1]][[40]]$text
+## [1] &quot;A strong tackle used to draw an anchor up to the cathead of a ship.&quot;
+## 
+## [[1]][[40]]$score
+## [1] 0
+## 
+## 
+## [[1]][[41]]
+## [[1]][[41]]$textProns
+## list()
+## 
+## [[1]][[41]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[41]]$exampleUses
+## list()
+## 
+## [[1]][[41]]$relatedWords
+## list()
+## 
+## [[1]][[41]]$labels
+## list()
+## 
+## [[1]][[41]]$citations
+## list()
+## 
+## [[1]][[41]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[41]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[41]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[41]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[1]][[41]]$seqString
+## [1] &quot;3.&quot;
+## 
+## [[1]][[41]]$text
+## [1] &quot;A double tripod (for holding a plate, etc.), having six feet, of which three rest on the ground, in whatever position it is placed.&quot;
+## 
+## [[1]][[41]]$score
+## [1] 0
+## 
+## 
+## [[1]][[42]]
+## [[1]][[42]]$textProns
+## list()
+## 
+## [[1]][[42]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[42]]$exampleUses
+## list()
+## 
+## [[1]][[42]]$relatedWords
+## list()
+## 
+## [[1]][[42]]$labels
+## list()
+## 
+## [[1]][[42]]$citations
+## list()
+## 
+## [[1]][[42]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[42]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[42]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[42]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[1]][[42]]$seqString
+## [1] &quot;4.&quot;
+## 
+## [[1]][[42]]$text
+## [1] &quot;An old game&quot;
+## 
+## [[1]][[42]]$score
+## [1] 0
+## 
+## 
+## [[1]][[43]]
+## [[1]][[43]]$textProns
+## list()
+## 
+## [[1]][[43]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[43]]$exampleUses
+## list()
+## 
+## [[1]][[43]]$relatedWords
+## list()
+## 
+## [[1]][[43]]$labels
+## list()
+## 
+## [[1]][[43]]$citations
+## list()
+## 
+## [[1]][[43]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[43]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[43]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[43]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[1]][[43]]$seqString
+## [1] &quot;4 (a)&quot;
+## 
+## [[1]][[43]]$text
+## [1] &quot;The game of tipcat and the implement with which it is played. See Tipcat.&quot;
+## 
+## [[1]][[43]]$score
+## [1] 0
+## 
+## 
+## [[1]][[44]]
+## [[1]][[44]]$textProns
+## list()
+## 
+## [[1]][[44]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[44]]$exampleUses
+## list()
+## 
+## [[1]][[44]]$relatedWords
+## list()
+## 
+## [[1]][[44]]$labels
+## list()
+## 
+## [[1]][[44]]$citations
+## list()
+## 
+## [[1]][[44]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[44]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[44]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[44]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[1]][[44]]$seqString
+## [1] &quot;4 (b)&quot;
+## 
+## [[1]][[44]]$text
+## [1] &quot;A game of ball, called, according to the number of batters, one old cat, two old cat, etc.&quot;
+## 
+## [[1]][[44]]$score
+## [1] 0
+## 
+## 
+## [[1]][[45]]
+## [[1]][[45]]$textProns
+## list()
+## 
+## [[1]][[45]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[45]]$exampleUses
+## [[1]][[45]]$exampleUses[[1]]
+## [[1]][[45]]$exampleUses[[1]]$text
+## [1] &quot;British sailors feared the cat&quot;
+## 
+## 
+## 
+## [[1]][[45]]$relatedWords
+## list()
+## 
+## [[1]][[45]]$labels
+## list()
+## 
+## [[1]][[45]]$citations
+## list()
+## 
+## [[1]][[45]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[45]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[45]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[45]]$sequence
+## [1] &quot;8&quot;
+## 
+## [[1]][[45]]$seqString
+## [1] &quot;5.&quot;
+## 
+## [[1]][[45]]$text
+## [1] &quot;same as cat o&#39; nine tails.&quot;
+## 
+## [[1]][[45]]$score
+## [1] 0
+## 
+## 
+## [[1]][[46]]
+## [[1]][[46]]$textProns
+## list()
+## 
+## [[1]][[46]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[46]]$exampleUses
+## list()
+## 
+## [[1]][[46]]$relatedWords
+## list()
+## 
+## [[1]][[46]]$labels
+## list()
+## 
+## [[1]][[46]]$citations
+## list()
+## 
+## [[1]][[46]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[46]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[46]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[46]]$sequence
+## [1] &quot;9&quot;
+## 
+## [[1]][[46]]$seqString
+## [1] &quot;6.&quot;
+## 
+## [[1]][[46]]$text
+## [1] &quot;A catamaran.&quot;
+## 
+## [[1]][[46]]$score
+## [1] 0
+## 
+## 
+## [[1]][[47]]
+## [[1]][[47]]$textProns
+## list()
+## 
+## [[1]][[47]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[1]][[47]]$exampleUses
+## [[1]][[47]]$exampleUses[[1]]
+## [[1]][[47]]$exampleUses[[1]]$text
+## [1] &quot;to cat an anchor&quot;
+## 
+## 
+## 
+## [[1]][[47]]$relatedWords
+## list()
+## 
+## [[1]][[47]]$labels
+## [[1]][[47]]$labels[[1]]
+## [[1]][[47]]$labels[[1]]$text
+## [1] &quot;(Naut.)&quot;
+## 
+## [[1]][[47]]$labels[[1]]$type
+## [1] &quot;fld&quot;
+## 
+## 
+## 
+## [[1]][[47]]$citations
+## [[1]][[47]]$citations[[1]]
+## [[1]][[47]]$citations[[1]]$source
+## [1] &quot;Totten.&quot;
+## 
+## 
+## 
+## [[1]][[47]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[47]]$partOfSpeech
+## [1] &quot;verb-transitive&quot;
+## 
+## [[1]][[47]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[1]][[47]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[47]]$text
+## [1] &quot;To bring to the cathead. See anchor.&quot;
+## 
+## [[1]][[47]]$score
+## [1] 0
+## 
+## 
+## [[1]][[48]]
+## [[1]][[48]]$textProns
+## list()
+## 
+## [[1]][[48]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[48]]$exampleUses
+## list()
+## 
+## [[1]][[48]]$relatedWords
+## list()
+## 
+## [[1]][[48]]$labels
+## list()
+## 
+## [[1]][[48]]$citations
+## list()
+## 
+## [[1]][[48]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[48]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[48]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[48]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[48]]$extendedText
+## [1] &quot;It is uncertain whether any animal now existing in a wild state is the ancestor of the domestic cat; probably it is descended from a cat originally domesticated in Egypt, though some regard the wildcat of Europe, F. catus, as the feral stock. The wildcat is much larger than the domestic cat, strong and ferocious, and very destructive to poultry, lambs, etc.&quot;
+## 
+## [[1]][[48]]$text
+## [1] &quot;A domesticated carnivorous quadruped of the family Felidæ and genus Felis, F. domestica.&quot;
+## 
+## [[1]][[48]]$score
+## [1] 0
+## 
+## 
+## [[1]][[49]]
+## [[1]][[49]]$textProns
+## list()
+## 
+## [[1]][[49]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[49]]$exampleUses
+## list()
+## 
+## [[1]][[49]]$relatedWords
+## list()
+## 
+## [[1]][[49]]$labels
+## list()
+## 
+## [[1]][[49]]$citations
+## list()
+## 
+## [[1]][[49]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[49]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[49]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[49]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[1]][[49]]$text
+## [1] &quot;In general, any digitigrade carnivorous quadruped of the family Felidæ, as the lion, tiger, leopard, jaguar, etc., especially of the genus Felis, and more particularly one of the smaller species of this genus; and of the short-tailed species of the genus Lynx.&quot;
+## 
+## [[1]][[49]]$score
+## [1] 0
+## 
+## 
+## [[1]][[50]]
+## [[1]][[50]]$textProns
+## list()
+## 
+## [[1]][[50]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[50]]$exampleUses
+## list()
+## 
+## [[1]][[50]]$relatedWords
+## list()
+## 
+## [[1]][[50]]$labels
+## list()
+## 
+## [[1]][[50]]$citations
+## list()
+## 
+## [[1]][[50]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[50]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[50]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[50]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[1]][[50]]$text
+## [1] &quot;A ferret.&quot;
+## 
+## [[1]][[50]]$score
+## [1] 0
+## 
+## 
+## [[1]][[51]]
+## [[1]][[51]]$textProns
+## list()
+## 
+## [[1]][[51]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[51]]$exampleUses
+## list()
+## 
+## [[1]][[51]]$relatedWords
+## list()
+## 
+## [[1]][[51]]$labels
+## list()
+## 
+## [[1]][[51]]$citations
+## list()
+## 
+## [[1]][[51]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[51]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[51]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[51]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[1]][[51]]$text
+## [1] &quot;A gossipy, meddlesome woman given to scandal and intrigue.&quot;
+## 
+## [[1]][[51]]$score
+## [1] 0
+## 
+## 
+## [[1]][[52]]
+## [[1]][[52]]$textProns
+## list()
+## 
+## [[1]][[52]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[52]]$exampleUses
+## list()
+## 
+## [[1]][[52]]$relatedWords
+## list()
+## 
+## [[1]][[52]]$labels
+## list()
+## 
+## [[1]][[52]]$citations
+## list()
+## 
+## [[1]][[52]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[52]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[52]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[52]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[1]][[52]]$text
+## [1] &quot;A catfish.&quot;
+## 
+## [[1]][[52]]$score
+## [1] 0
+## 
+## 
+## [[1]][[53]]
+## [[1]][[53]]$textProns
+## list()
+## 
+## [[1]][[53]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[53]]$exampleUses
+## list()
+## 
+## [[1]][[53]]$relatedWords
+## list()
+## 
+## [[1]][[53]]$labels
+## list()
+## 
+## [[1]][[53]]$citations
+## list()
+## 
+## [[1]][[53]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[53]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[53]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[53]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[1]][[53]]$text
+## [1] &quot;A whip: a contraction of cat-o&#39;-nine-tails.&quot;
+## 
+## [[1]][[53]]$score
+## [1] 0
+## 
+## 
+## [[1]][[54]]
+## [[1]][[54]]$textProns
+## list()
+## 
+## [[1]][[54]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[54]]$exampleUses
+## list()
+## 
+## [[1]][[54]]$relatedWords
+## list()
+## 
+## [[1]][[54]]$labels
+## list()
+## 
+## [[1]][[54]]$citations
+## list()
+## 
+## [[1]][[54]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[54]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[54]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[54]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[1]][[54]]$text
+## [1] &quot;A double tripod having six feet: so called because it always lands on its feet, as a cat is proverbially said to do.&quot;
+## 
+## [[1]][[54]]$score
+## [1] 0
+## 
+## 
+## [[1]][[55]]
+## [[1]][[55]]$textProns
+## list()
+## 
+## [[1]][[55]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[55]]$exampleUses
+## list()
+## 
+## [[1]][[55]]$relatedWords
+## list()
+## 
+## [[1]][[55]]$labels
+## list()
+## 
+## [[1]][[55]]$citations
+## list()
+## 
+## [[1]][[55]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[55]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[55]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[55]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[1]][[55]]$text
+## [1] &quot;In the middle ages, a frame of heavy timber with projecting pins or teeth, hoisted up to the battlements, ready to be dropped upon assailants. Also called prickly cat.&quot;
+## 
+## [[1]][[55]]$score
+## [1] 0
+## 
+## 
+## [[1]][[56]]
+## [[1]][[56]]$textProns
+## list()
+## 
+## [[1]][[56]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[56]]$exampleUses
+## list()
+## 
+## [[1]][[56]]$relatedWords
+## list()
+## 
+## [[1]][[56]]$labels
+## list()
+## 
+## [[1]][[56]]$citations
+## list()
+## 
+## [[1]][[56]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[56]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[56]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[56]]$sequence
+## [1] &quot;8&quot;
+## 
+## [[1]][[56]]$text
+## [1] &quot;A piece of wood tapering to a point at both ends, used in playing tip-cat.&quot;
+## 
+## [[1]][[56]]$score
+## [1] 0
+## 
+## 
+## [[1]][[57]]
+## [[1]][[57]]$textProns
+## list()
+## 
+## [[1]][[57]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[57]]$exampleUses
+## list()
+## 
+## [[1]][[57]]$relatedWords
+## list()
+## 
+## [[1]][[57]]$labels
+## list()
+## 
+## [[1]][[57]]$citations
+## list()
+## 
+## [[1]][[57]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[57]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[57]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[57]]$sequence
+## [1] &quot;9&quot;
+## 
+## [[1]][[57]]$text
+## [1] &quot;The game of tip-cat. Also called cat-and-dog.&quot;
+## 
+## [[1]][[57]]$score
+## [1] 0
+## 
+## 
+## [[1]][[58]]
+## [[1]][[58]]$textProns
+## list()
+## 
+## [[1]][[58]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[58]]$exampleUses
+## list()
+## 
+## [[1]][[58]]$relatedWords
+## list()
+## 
+## [[1]][[58]]$labels
+## list()
+## 
+## [[1]][[58]]$citations
+## list()
+## 
+## [[1]][[58]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[58]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[58]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[58]]$sequence
+## [1] &quot;10&quot;
+## 
+## [[1]][[58]]$text
+## [1] &quot;In faro, the occurrence of two cards of the same denomination out of the last three in the deck.&quot;
+## 
+## [[1]][[58]]$score
+## [1] 0
+## 
+## 
+## [[1]][[59]]
+## [[1]][[59]]$textProns
+## list()
+## 
+## [[1]][[59]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[59]]$exampleUses
+## list()
+## 
+## [[1]][[59]]$relatedWords
+## list()
+## 
+## [[1]][[59]]$labels
+## list()
+## 
+## [[1]][[59]]$citations
+## list()
+## 
+## [[1]][[59]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[59]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[59]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[59]]$sequence
+## [1] &quot;11&quot;
+## 
+## [[1]][[59]]$text
+## [1] &quot;In coal-mining, a clunchy rock. See clunch.&quot;
+## 
+## [[1]][[59]]$score
+## [1] 0
+## 
+## 
+## [[1]][[60]]
+## [[1]][[60]]$textProns
+## list()
+## 
+## [[1]][[60]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[60]]$exampleUses
+## list()
+## 
+## [[1]][[60]]$relatedWords
+## list()
+## 
+## [[1]][[60]]$labels
+## list()
+## 
+## [[1]][[60]]$citations
+## list()
+## 
+## [[1]][[60]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[60]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[60]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[60]]$sequence
+## [1] &quot;12&quot;
+## 
+## [[1]][[60]]$text
+## [1] &quot;[Apparently in allusion to the sly and deceitful habits of the cat.] A mess of coarse meal, clay, etc., placed on dovecotes, to allure strangers.&quot;
+## 
+## [[1]][[60]]$score
+## [1] 0
+## 
+## 
+## [[1]][[61]]
+## [[1]][[61]]$textProns
+## list()
+## 
+## [[1]][[61]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[61]]$exampleUses
+## list()
+## 
+## [[1]][[61]]$relatedWords
+## list()
+## 
+## [[1]][[61]]$labels
+## list()
+## 
+## [[1]][[61]]$citations
+## list()
+## 
+## [[1]][[61]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[61]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[61]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[61]]$sequence
+## [1] &quot;13&quot;
+## 
+## [[1]][[61]]$text
+## [1] &quot;In plastering, that portion of the first rough coat which fills the space between the laths, often projecting at the back, and serving to hold the plaster firmly to the walls.&quot;
+## 
+## [[1]][[61]]$score
+## [1] 0
+## 
+## 
+## [[1]][[62]]
+## [[1]][[62]]$textProns
+## list()
+## 
+## [[1]][[62]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[62]]$exampleUses
+## list()
+## 
+## [[1]][[62]]$relatedWords
+## list()
+## 
+## [[1]][[62]]$labels
+## list()
+## 
+## [[1]][[62]]$citations
+## list()
+## 
+## [[1]][[62]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[62]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[62]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[62]]$sequence
+## [1] &quot;14&quot;
+## 
+## [[1]][[62]]$text
+## [1] &quot;The salt which crystallizes about stakes placed beneath the holes in the bottom of the troughs in which salt is put to drain.&quot;
+## 
+## [[1]][[62]]$score
+## [1] 0
+## 
+## 
+## [[1]][[63]]
+## [[1]][[63]]$textProns
+## list()
+## 
+## [[1]][[63]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[63]]$exampleUses
+## list()
+## 
+## [[1]][[63]]$relatedWords
+## list()
+## 
+## [[1]][[63]]$labels
+## list()
+## 
+## [[1]][[63]]$citations
+## list()
+## 
+## [[1]][[63]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[63]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[63]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[63]]$sequence
+## [1] &quot;15&quot;
+## 
+## [[1]][[63]]$text
+## [1] &quot;A ship formed on the Norwegian model, having a narrow stern, projecting quarters, and a deep waist.&quot;
+## 
+## [[1]][[63]]$score
+## [1] 0
+## 
+## 
+## [[1]][[64]]
+## [[1]][[64]]$textProns
+## list()
+## 
+## [[1]][[64]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[64]]$exampleUses
+## list()
+## 
+## [[1]][[64]]$relatedWords
+## list()
+## 
+## [[1]][[64]]$labels
+## list()
+## 
+## [[1]][[64]]$citations
+## list()
+## 
+## [[1]][[64]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[64]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[64]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[64]]$sequence
+## [1] &quot;16&quot;
+## 
+## [[1]][[64]]$text
+## [1] &quot;Nautical, a tackle used in hoisting an anchor from the hawse-hole to the cat-head.&quot;
+## 
+## [[1]][[64]]$score
+## [1] 0
+## 
+## 
+## [[1]][[65]]
+## [[1]][[65]]$textProns
+## list()
+## 
+## [[1]][[65]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[65]]$exampleUses
+## list()
+## 
+## [[1]][[65]]$relatedWords
+## list()
+## 
+## [[1]][[65]]$labels
+## list()
+## 
+## [[1]][[65]]$citations
+## list()
+## 
+## [[1]][[65]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[65]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[65]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[65]]$text
+## [1] &quot;To draw (an anchor) up to the cat-head.&quot;
+## 
+## [[1]][[65]]$score
+## [1] 0
+## 
+## 
+## [[1]][[66]]
+## [[1]][[66]]$textProns
+## list()
+## 
+## [[1]][[66]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[66]]$exampleUses
+## list()
+## 
+## [[1]][[66]]$relatedWords
+## list()
+## 
+## [[1]][[66]]$labels
+## list()
+## 
+## [[1]][[66]]$citations
+## list()
+## 
+## [[1]][[66]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[66]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[66]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[1]][[66]]$text
+## [1] &quot;To fill with soft clay, as the intervals between laths: as, a chimney well catted.&quot;
+## 
+## [[1]][[66]]$score
+## [1] 0
+## 
+## 
+## [[1]][[67]]
+## [[1]][[67]]$textProns
+## list()
+## 
+## [[1]][[67]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[67]]$exampleUses
+## list()
+## 
+## [[1]][[67]]$relatedWords
+## list()
+## 
+## [[1]][[67]]$labels
+## list()
+## 
+## [[1]][[67]]$citations
+## list()
+## 
+## [[1]][[67]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[67]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[67]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[1]][[67]]$text
+## [1] &quot;To fish for catfish.&quot;
+## 
+## [[1]][[67]]$score
+## [1] 0
+## 
+## 
+## [[1]][[68]]
+## [[1]][[68]]$textProns
+## list()
+## 
+## [[1]][[68]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[68]]$exampleUses
+## list()
+## 
+## [[1]][[68]]$relatedWords
+## list()
+## 
+## [[1]][[68]]$labels
+## list()
+## 
+## [[1]][[68]]$citations
+## list()
+## 
+## [[1]][[68]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[68]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[68]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[68]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[68]]$text
+## [1] &quot;An abbreviated form of catamaran.&quot;
+## 
+## [[1]][[68]]$score
+## [1] 0
+## 
+## 
+## [[1]][[69]]
+## [[1]][[69]]$textProns
+## list()
+## 
+## [[1]][[69]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[69]]$exampleUses
+## list()
+## 
+## [[1]][[69]]$relatedWords
+## list()
+## 
+## [[1]][[69]]$labels
+## list()
+## 
+## [[1]][[69]]$citations
+## list()
+## 
+## [[1]][[69]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[69]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[69]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[69]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[69]]$text
+## [1] &quot;The form of cata- before a vowel.&quot;
+## 
+## [[1]][[69]]$score
+## [1] 0
+## 
+## 
+## [[1]][[70]]
+## [[1]][[70]]$textProns
+## list()
+## 
+## [[1]][[70]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[70]]$exampleUses
+## list()
+## 
+## [[1]][[70]]$relatedWords
+## list()
+## 
+## [[1]][[70]]$labels
+## list()
+## 
+## [[1]][[70]]$citations
+## list()
+## 
+## [[1]][[70]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[70]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[70]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[70]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[70]]$text
+## [1] &quot;In medieval warfare, a machine resembling the pluteus, under the protection of which soldiers worked in sapping walls and fosses.&quot;
+## 
+## [[1]][[70]]$score
+## [1] 0
+## 
+## 
+## [[1]][[71]]
+## [[1]][[71]]$textProns
+## list()
+## 
+## [[1]][[71]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[71]]$exampleUses
+## list()
+## 
+## [[1]][[71]]$relatedWords
+## list()
+## 
+## [[1]][[71]]$labels
+## list()
+## 
+## [[1]][[71]]$citations
+## list()
+## 
+## [[1]][[71]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[71]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[71]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[71]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[1]][[71]]$text
+## [1] &quot;plural In mining, burnt clay used for tamping.&quot;
+## 
+## [[1]][[71]]$score
+## [1] 0
+## 
+## 
+## [[1]][[72]]
+## [[1]][[72]]$textProns
+## list()
+## 
+## [[1]][[72]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[72]]$exampleUses
+## list()
+## 
+## [[1]][[72]]$relatedWords
+## list()
+## 
+## [[1]][[72]]$labels
+## list()
+## 
+## [[1]][[72]]$citations
+## list()
+## 
+## [[1]][[72]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[72]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[72]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[72]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[1]][[72]]$text
+## [1] &quot;Same as channel-cat.&quot;
+## 
+## [[1]][[72]]$score
+## [1] 0
+## 
+## 
+## [[1]][[73]]
+## [[1]][[73]]$textProns
+## list()
+## 
+## [[1]][[73]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[73]]$exampleUses
+## list()
+## 
+## [[1]][[73]]$relatedWords
+## list()
+## 
+## [[1]][[73]]$labels
+## list()
+## 
+## [[1]][[73]]$citations
+## list()
+## 
+## [[1]][[73]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[73]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[73]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[73]]$text
+## [1] &quot;To act after the manner of soft clay or mortar in filling crevices.&quot;
+## 
+## [[1]][[73]]$score
+## [1] 0
+## 
+## 
+## [[1]][[74]]
+## [[1]][[74]]$textProns
+## list()
+## 
+## [[1]][[74]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[1]][[74]]$exampleUses
+## list()
+## 
+## [[1]][[74]]$relatedWords
+## list()
+## 
+## [[1]][[74]]$labels
+## list()
+## 
+## [[1]][[74]]$citations
+## list()
+## 
+## [[1]][[74]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[74]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[1]][[74]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[74]]$text
+## [1] &quot;An abbreviation of Catalan: [lowercase] of catalogue; of catechism.&quot;
+## 
+## [[1]][[74]]$score
+## [1] 0
+## 
+## 
+## [[1]][[75]]
+## [[1]][[75]]$textProns
+## list()
+## 
+## [[1]][[75]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[75]]$exampleUses
+## list()
+## 
+## [[1]][[75]]$relatedWords
+## list()
+## 
+## [[1]][[75]]$labels
+## list()
+## 
+## [[1]][[75]]$citations
+## list()
+## 
+## [[1]][[75]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[75]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[75]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[75]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[1]][[75]]$text
+## [1] &quot;a whip with nine knotted cords&quot;
+## 
+## [[1]][[75]]$score
+## [1] 0
+## 
+## 
+## [[1]][[76]]
+## [[1]][[76]]$textProns
+## list()
+## 
+## [[1]][[76]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[76]]$exampleUses
+## [[1]][[76]]$exampleUses[[1]]
+## [[1]][[76]]$exampleUses[[1]]$text
+## [1] &quot;the guy&#39;s only doing it for some doll&quot;
+## 
+## 
+## 
+## [[1]][[76]]$relatedWords
+## list()
+## 
+## [[1]][[76]]$labels
+## list()
+## 
+## [[1]][[76]]$citations
+## list()
+## 
+## [[1]][[76]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[76]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[76]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[76]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[1]][[76]]$text
+## [1] &quot;an informal term for a youth or man&quot;
+## 
+## [[1]][[76]]$score
+## [1] 0
+## 
+## 
+## [[1]][[77]]
+## [[1]][[77]]$textProns
+## list()
+## 
+## [[1]][[77]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[77]]$exampleUses
+## list()
+## 
+## [[1]][[77]]$relatedWords
+## list()
+## 
+## [[1]][[77]]$labels
+## list()
+## 
+## [[1]][[77]]$citations
+## list()
+## 
+## [[1]][[77]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[77]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[77]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[77]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[1]][[77]]$text
+## [1] &quot;a spiteful woman gossip&quot;
+## 
+## [[1]][[77]]$score
+## [1] 0
+## 
+## 
+## [[1]][[78]]
+## [[1]][[78]]$textProns
+## list()
+## 
+## [[1]][[78]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[78]]$exampleUses
+## [[1]][[78]]$exampleUses[[1]]
+## [[1]][[78]]$exampleUses[[1]]$text
+## [1] &quot;The patient regurgitated the food we gave him last night&quot;
+## 
+## 
+## [[1]][[78]]$exampleUses[[2]]
+## [[1]][[78]]$exampleUses[[2]]$text
+## [1] &quot;He purged continuously&quot;
+## 
+## 
+## 
+## [[1]][[78]]$relatedWords
+## list()
+## 
+## [[1]][[78]]$labels
+## list()
+## 
+## [[1]][[78]]$citations
+## list()
+## 
+## [[1]][[78]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[78]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[1]][[78]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[78]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[1]][[78]]$text
+## [1] &quot;eject the contents of the stomach through the mouth&quot;
+## 
+## [[1]][[78]]$score
+## [1] 0
+## 
+## 
+## [[1]][[79]]
+## [[1]][[79]]$textProns
+## list()
+## 
+## [[1]][[79]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[79]]$exampleUses
+## list()
+## 
+## [[1]][[79]]$relatedWords
+## list()
+## 
+## [[1]][[79]]$labels
+## list()
+## 
+## [[1]][[79]]$citations
+## list()
+## 
+## [[1]][[79]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[79]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[79]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[79]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[1]][[79]]$text
+## [1] &quot;the leaves of the shrub Catha edulis which are chewed like tobacco or used to make tea; has the effect of a euphoric stimulant&quot;
+## 
+## [[1]][[79]]$score
+## [1] 0
+## 
+## 
+## [[1]][[80]]
+## [[1]][[80]]$textProns
+## list()
+## 
+## [[1]][[80]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[80]]$exampleUses
+## list()
+## 
+## [[1]][[80]]$relatedWords
+## list()
+## 
+## [[1]][[80]]$labels
+## list()
+## 
+## [[1]][[80]]$citations
+## list()
+## 
+## [[1]][[80]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[80]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[80]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[80]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[1]][[80]]$text
+## [1] &quot;a large tracked vehicle that is propelled by two endless metal belts; frequently used for moving earth in construction and farm work&quot;
+## 
+## [[1]][[80]]$score
+## [1] 0
+## 
+## 
+## [[1]][[81]]
+## [[1]][[81]]$textProns
+## list()
+## 
+## [[1]][[81]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[81]]$exampleUses
+## list()
+## 
+## [[1]][[81]]$relatedWords
+## list()
+## 
+## [[1]][[81]]$labels
+## list()
+## 
+## [[1]][[81]]$citations
+## list()
+## 
+## [[1]][[81]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[81]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[1]][[81]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[81]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[1]][[81]]$text
+## [1] &quot;beat with a cat-o&#39;-nine-tails&quot;
+## 
+## [[1]][[81]]$score
+## [1] 0
+## 
+## 
+## [[1]][[82]]
+## [[1]][[82]]$textProns
+## list()
+## 
+## [[1]][[82]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[82]]$exampleUses
+## list()
+## 
+## [[1]][[82]]$relatedWords
+## list()
+## 
+## [[1]][[82]]$labels
+## list()
+## 
+## [[1]][[82]]$citations
+## list()
+## 
+## [[1]][[82]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[82]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[82]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[82]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[1]][[82]]$text
+## [1] &quot;feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats&quot;
+## 
+## [[1]][[82]]$score
+## [1] 0
+## 
+## 
+## [[1]][[83]]
+## [[1]][[83]]$textProns
+## list()
+## 
+## [[1]][[83]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[83]]$exampleUses
+## list()
+## 
+## [[1]][[83]]$relatedWords
+## list()
+## 
+## [[1]][[83]]$labels
+## list()
+## 
+## [[1]][[83]]$citations
+## list()
+## 
+## [[1]][[83]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[83]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[83]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[83]]$sequence
+## [1] &quot;8&quot;
+## 
+## [[1]][[83]]$text
+## [1] &quot;a method of examining body organs by scanning them with X rays and using a computer to construct a series of cross-sectional scans along a single axis&quot;
+## 
+## [[1]][[83]]$score
+## [1] 0
+## 
+## 
+## [[1]][[84]]
+## [[1]][[84]]$textProns
+## list()
+## 
+## [[1]][[84]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[1]][[84]]$exampleUses
+## list()
+## 
+## [[1]][[84]]$relatedWords
+## list()
+## 
+## [[1]][[84]]$labels
+## list()
+## 
+## [[1]][[84]]$citations
+## list()
+## 
+## [[1]][[84]]$word
+## [1] &quot;cat&quot;
+## 
+## [[1]][[84]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[1]][[84]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[1]][[84]]$sequence
+## [1] &quot;9&quot;
+## 
+## [[1]][[84]]$text
+## [1] &quot;any of several large cats typically able to roar and living in the wild&quot;
+## 
+## [[1]][[84]]$score
+## [1] 0
+## 
+## 
+## 
+## [[2]]
+## [[2]][[1]]
+## [[2]][[1]]$textProns
+## list()
+## 
+## [[2]][[1]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[1]]$exampleUses
+## list()
+## 
+## [[2]][[1]]$relatedWords
+## list()
+## 
+## [[2]][[1]]$labels
+## list()
+## 
+## [[2]][[1]]$citations
+## list()
+## 
+## [[2]][[1]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[1]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[2]][[1]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[1]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[1]]$text
+## [1] &quot;A domesticated carnivorous mammal (Canis familiaris) related to the foxes and wolves and raised in a wide variety of breeds.&quot;
+## 
+## [[2]][[1]]$score
+## [1] 0
+## 
+## 
+## [[2]][[2]]
+## [[2]][[2]]$textProns
+## list()
+## 
+## [[2]][[2]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[2]]$exampleUses
+## list()
+## 
+## [[2]][[2]]$relatedWords
+## list()
+## 
+## [[2]][[2]]$labels
+## list()
+## 
+## [[2]][[2]]$citations
+## list()
+## 
+## [[2]][[2]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[2]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[2]][[2]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[2]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[2]]$text
+## [1] &quot;Any of various carnivorous mammals of the family Canidae, such as the dingo.&quot;
+## 
+## [[2]][[2]]$score
+## [1] 0
+## 
+## 
+## [[2]][[3]]
+## [[2]][[3]]$textProns
+## list()
+## 
+## [[2]][[3]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[3]]$exampleUses
+## list()
+## 
+## [[2]][[3]]$relatedWords
+## list()
+## 
+## [[2]][[3]]$labels
+## list()
+## 
+## [[2]][[3]]$citations
+## list()
+## 
+## [[2]][[3]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[3]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[2]][[3]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[3]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[3]]$text
+## [1] &quot;A male animal of the family Canidae, especially of the fox or a domesticated breed.&quot;
+## 
+## [[2]][[3]]$score
+## [1] 0
+## 
+## 
+## [[2]][[4]]
+## [[2]][[4]]$textProns
+## list()
+## 
+## [[2]][[4]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[4]]$exampleUses
+## list()
+## 
+## [[2]][[4]]$relatedWords
+## list()
+## 
+## [[2]][[4]]$labels
+## list()
+## 
+## [[2]][[4]]$citations
+## list()
+## 
+## [[2]][[4]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[4]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[2]][[4]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[4]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[4]]$text
+## [1] &quot;Any of various other animals, such as the prairie dog.&quot;
+## 
+## [[2]][[4]]$score
+## [1] 0
+## 
+## 
+## [[2]][[5]]
+## [[2]][[5]]$textProns
+## list()
+## 
+## [[2]][[5]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[5]]$exampleUses
+## list()
+## 
+## [[2]][[5]]$relatedWords
+## list()
+## 
+## [[2]][[5]]$labels
+## list()
+## 
+## [[2]][[5]]$citations
+## list()
+## 
+## [[2]][[5]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[5]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[2]][[5]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[5]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[5]]$text
+## [1] &quot;Informal   A person:  You won, you lucky dog. &quot;
+## 
+## [[2]][[5]]$score
+## [1] 0
+## 
+## 
+## [[2]][[6]]
+## [[2]][[6]]$textProns
+## list()
+## 
+## [[2]][[6]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[6]]$exampleUses
+## list()
+## 
+## [[2]][[6]]$relatedWords
+## list()
+## 
+## [[2]][[6]]$labels
+## list()
+## 
+## [[2]][[6]]$citations
+## list()
+## 
+## [[2]][[6]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[6]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[2]][[6]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[6]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[6]]$text
+## [1] &quot;Informal   A person regarded as contemptible:  You stole my watch, you dog. &quot;
+## 
+## [[2]][[6]]$score
+## [1] 0
+## 
+## 
+## [[2]][[7]]
+## [[2]][[7]]$textProns
+## list()
+## 
+## [[2]][[7]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[7]]$exampleUses
+## list()
+## 
+## [[2]][[7]]$relatedWords
+## list()
+## 
+## [[2]][[7]]$labels
+## list()
+## 
+## [[2]][[7]]$citations
+## list()
+## 
+## [[2]][[7]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[7]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[2]][[7]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[7]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[7]]$text
+## [1] &quot;Slang   A person regarded as unattractive or uninteresting.&quot;
+## 
+## [[2]][[7]]$score
+## [1] 0
+## 
+## 
+## [[2]][[8]]
+## [[2]][[8]]$textProns
+## list()
+## 
+## [[2]][[8]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[8]]$exampleUses
+## list()
+## 
+## [[2]][[8]]$relatedWords
+## list()
+## 
+## [[2]][[8]]$labels
+## list()
+## 
+## [[2]][[8]]$citations
+## list()
+## 
+## [[2]][[8]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[8]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[2]][[8]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[8]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[8]]$text
+## [1] &quot;Slang   Something of inferior or low quality: \&quot;The President had read the speech to some of his friends and they told him it was a dog”  ( John P. Roche). &quot;
+## 
+## [[2]][[8]]$score
+## [1] 0
+## 
+## 
+## [[2]][[9]]
+## [[2]][[9]]$textProns
+## list()
+## 
+## [[2]][[9]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[9]]$exampleUses
+## list()
+## 
+## [[2]][[9]]$relatedWords
+## list()
+## 
+## [[2]][[9]]$labels
+## list()
+## 
+## [[2]][[9]]$citations
+## list()
+## 
+## [[2]][[9]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[9]]$sequence
+## [1] &quot;8&quot;
+## 
+## [[2]][[9]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[9]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[9]]$text
+## [1] &quot;Slang   An investment that produces a low return or a loss.&quot;
+## 
+## [[2]][[9]]$score
+## [1] 0
+## 
+## 
+## [[2]][[10]]
+## [[2]][[10]]$textProns
+## list()
+## 
+## [[2]][[10]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[10]]$exampleUses
+## list()
+## 
+## [[2]][[10]]$relatedWords
+## list()
+## 
+## [[2]][[10]]$labels
+## list()
+## 
+## [[2]][[10]]$citations
+## list()
+## 
+## [[2]][[10]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[10]]$sequence
+## [1] &quot;9&quot;
+## 
+## [[2]][[10]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[10]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[10]]$text
+## [1] &quot;Slang   The feet.&quot;
+## 
+## [[2]][[10]]$score
+## [1] 0
+## 
+## 
+## [[2]][[11]]
+## [[2]][[11]]$textProns
+## list()
+## 
+## [[2]][[11]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[11]]$exampleUses
+## list()
+## 
+## [[2]][[11]]$relatedWords
+## list()
+## 
+## [[2]][[11]]$labels
+## list()
+## 
+## [[2]][[11]]$citations
+## list()
+## 
+## [[2]][[11]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[11]]$sequence
+## [1] &quot;10&quot;
+## 
+## [[2]][[11]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[11]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[11]]$text
+## [1] &quot;See andiron.&quot;
+## 
+## [[2]][[11]]$score
+## [1] 0
+## 
+## 
+## [[2]][[12]]
+## [[2]][[12]]$textProns
+## list()
+## 
+## [[2]][[12]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[12]]$exampleUses
+## list()
+## 
+## [[2]][[12]]$relatedWords
+## list()
+## 
+## [[2]][[12]]$labels
+## list()
+## 
+## [[2]][[12]]$citations
+## list()
+## 
+## [[2]][[12]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[12]]$sequence
+## [1] &quot;11&quot;
+## 
+## [[2]][[12]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[12]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[12]]$text
+## [1] &quot;Slang   A hot dog; a wiener.&quot;
+## 
+## [[2]][[12]]$score
+## [1] 0
+## 
+## 
+## [[2]][[13]]
+## [[2]][[13]]$textProns
+## list()
+## 
+## [[2]][[13]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[13]]$exampleUses
+## list()
+## 
+## [[2]][[13]]$relatedWords
+## list()
+## 
+## [[2]][[13]]$labels
+## list()
+## 
+## [[2]][[13]]$citations
+## list()
+## 
+## [[2]][[13]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[13]]$sequence
+## [1] &quot;12&quot;
+## 
+## [[2]][[13]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[13]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[13]]$text
+## [1] &quot;Any of various hooked or U-shaped metallic devices used for gripping or holding heavy objects.&quot;
+## 
+## [[2]][[13]]$score
+## [1] 0
+## 
+## 
+## [[2]][[14]]
+## [[2]][[14]]$textProns
+## list()
+## 
+## [[2]][[14]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[14]]$exampleUses
+## list()
+## 
+## [[2]][[14]]$relatedWords
+## list()
+## 
+## [[2]][[14]]$labels
+## list()
+## 
+## [[2]][[14]]$citations
+## list()
+## 
+## [[2]][[14]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[14]]$sequence
+## [1] &quot;13&quot;
+## 
+## [[2]][[14]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[14]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[14]]$text
+## [1] &quot;Astronomy   A sun dog.&quot;
+## 
+## [[2]][[14]]$score
+## [1] 0
+## 
+## 
+## [[2]][[15]]
+## [[2]][[15]]$textProns
+## list()
+## 
+## [[2]][[15]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[15]]$exampleUses
+## list()
+## 
+## [[2]][[15]]$relatedWords
+## list()
+## 
+## [[2]][[15]]$labels
+## list()
+## 
+## [[2]][[15]]$citations
+## list()
+## 
+## [[2]][[15]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[15]]$sequence
+## [1] &quot;14&quot;
+## 
+## [[2]][[15]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[15]]$partOfSpeech
+## [1] &quot;adverb&quot;
+## 
+## [[2]][[15]]$text
+## [1] &quot;Totally; completely. Often used in combination:  dog-tired. &quot;
+## 
+## [[2]][[15]]$score
+## [1] 0
+## 
+## 
+## [[2]][[16]]
+## [[2]][[16]]$textProns
+## list()
+## 
+## [[2]][[16]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[16]]$exampleUses
+## list()
+## 
+## [[2]][[16]]$relatedWords
+## list()
+## 
+## [[2]][[16]]$labels
+## list()
+## 
+## [[2]][[16]]$citations
+## list()
+## 
+## [[2]][[16]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[16]]$sequence
+## [1] &quot;15&quot;
+## 
+## [[2]][[16]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[16]]$partOfSpeech
+## [1] &quot;verb-transitive&quot;
+## 
+## [[2]][[16]]$text
+## [1] &quot;To track or trail persistently: \&quot;A stranger then is still dogging us”  ( Arthur Conan Doyle). &quot;
+## 
+## [[2]][[16]]$score
+## [1] 0
+## 
+## 
+## [[2]][[17]]
+## [[2]][[17]]$textProns
+## list()
+## 
+## [[2]][[17]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[17]]$exampleUses
+## list()
+## 
+## [[2]][[17]]$relatedWords
+## list()
+## 
+## [[2]][[17]]$labels
+## list()
+## 
+## [[2]][[17]]$citations
+## list()
+## 
+## [[2]][[17]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[17]]$sequence
+## [1] &quot;16&quot;
+## 
+## [[2]][[17]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[17]]$partOfSpeech
+## [1] &quot;verb-transitive&quot;
+## 
+## [[2]][[17]]$text
+## [1] &quot;To hold or fasten with a mechanical device: \&quot;Watertight doors and hatches were dropped into place and dogged down to give the ship full watertight integrity”  ( Tom Clancy). &quot;
+## 
+## [[2]][[17]]$score
+## [1] 0
+## 
+## 
+## [[2]][[18]]
+## [[2]][[18]]$textProns
+## list()
+## 
+## [[2]][[18]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[18]]$exampleUses
+## list()
+## 
+## [[2]][[18]]$relatedWords
+## list()
+## 
+## [[2]][[18]]$labels
+## list()
+## 
+## [[2]][[18]]$citations
+## list()
+## 
+## [[2]][[18]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[18]]$sequence
+## [1] &quot;17&quot;
+## 
+## [[2]][[18]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[18]]$partOfSpeech
+## [1] &quot;idiom&quot;
+## 
+## [[2]][[18]]$text
+## [1] &quot;dog it  Slang   To fail to expend the effort needed to do or accomplish something.&quot;
+## 
+## [[2]][[18]]$score
+## [1] 0
+## 
+## 
+## [[2]][[19]]
+## [[2]][[19]]$textProns
+## list()
+## 
+## [[2]][[19]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[19]]$exampleUses
+## list()
+## 
+## [[2]][[19]]$relatedWords
+## list()
+## 
+## [[2]][[19]]$labels
+## list()
+## 
+## [[2]][[19]]$citations
+## list()
+## 
+## [[2]][[19]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[19]]$sequence
+## [1] &quot;18&quot;
+## 
+## [[2]][[19]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[19]]$partOfSpeech
+## [1] &quot;idiom&quot;
+## 
+## [[2]][[19]]$text
+## [1] &quot;go to the dogs  To go to ruin; degenerate.&quot;
+## 
+## [[2]][[19]]$score
+## [1] 0
+## 
+## 
+## [[2]][[20]]
+## [[2]][[20]]$textProns
+## list()
+## 
+## [[2]][[20]]$sourceDictionary
+## [1] &quot;ahd-legacy&quot;
+## 
+## [[2]][[20]]$exampleUses
+## list()
+## 
+## [[2]][[20]]$relatedWords
+## list()
+## 
+## [[2]][[20]]$labels
+## list()
+## 
+## [[2]][[20]]$citations
+## list()
+## 
+## [[2]][[20]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[20]]$sequence
+## [1] &quot;19&quot;
+## 
+## [[2]][[20]]$attributionText
+## [1] &quot;from The American Heritage® Dictionary of the English Language, 4th Edition&quot;
+## 
+## [[2]][[20]]$partOfSpeech
+## [1] &quot;idiom&quot;
+## 
+## [[2]][[20]]$text
+## [1] &quot;put on the dog  Informal   To make an ostentatious display of elegance, wealth, or culture.&quot;
+## 
+## [[2]][[20]]$score
+## [1] 0
+## 
+## 
+## [[2]][[21]]
+## [[2]][[21]]$textProns
+## list()
+## 
+## [[2]][[21]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[21]]$exampleUses
+## list()
+## 
+## [[2]][[21]]$relatedWords
+## list()
+## 
+## [[2]][[21]]$labels
+## list()
+## 
+## [[2]][[21]]$citations
+## list()
+## 
+## [[2]][[21]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[21]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[21]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[21]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[21]]$text
+## [1] &quot;A mammal, Canis lupus familiaris, of the genus Canis that has been domesticated for thousands of years, of highly variable appearance due to human breeding.&quot;
+## 
+## [[2]][[21]]$score
+## [1] 0
+## 
+## 
+## [[2]][[22]]
+## [[2]][[22]]$textProns
+## list()
+## 
+## [[2]][[22]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[22]]$exampleUses
+## list()
+## 
+## [[2]][[22]]$relatedWords
+## list()
+## 
+## [[2]][[22]]$labels
+## list()
+## 
+## [[2]][[22]]$citations
+## list()
+## 
+## [[2]][[22]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[22]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[22]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[22]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[22]]$text
+## [1] &quot;A male dog, wolf or fox, as opposed to a bitch (a female dog, wolf or fox).&quot;
+## 
+## [[2]][[22]]$score
+## [1] 0
+## 
+## 
+## [[2]][[23]]
+## [[2]][[23]]$textProns
+## list()
+## 
+## [[2]][[23]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[23]]$exampleUses
+## list()
+## 
+## [[2]][[23]]$relatedWords
+## list()
+## 
+## [[2]][[23]]$labels
+## [[2]][[23]]$labels[[1]]
+## [[2]][[23]]$labels[[1]]$text
+## [1] &quot;derogatory&quot;
+## 
+## [[2]][[23]]$labels[[1]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[2]][[23]]$citations
+## list()
+## 
+## [[2]][[23]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[23]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[23]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[23]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[23]]$text
+## [1] &quot;A dull, unattractive girl or woman.&quot;
+## 
+## [[2]][[23]]$score
+## [1] 0
+## 
+## 
+## [[2]][[24]]
+## [[2]][[24]]$textProns
+## list()
+## 
+## [[2]][[24]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[24]]$exampleUses
+## list()
+## 
+## [[2]][[24]]$relatedWords
+## list()
+## 
+## [[2]][[24]]$labels
+## [[2]][[24]]$labels[[1]]
+## [[2]][[24]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[2]][[24]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[2]][[24]]$citations
+## list()
+## 
+## [[2]][[24]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[24]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[24]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[24]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[24]]$text
+## [1] &quot;A man.&quot;
+## 
+## [[2]][[24]]$score
+## [1] 0
+## 
+## 
+## [[2]][[25]]
+## [[2]][[25]]$textProns
+## list()
+## 
+## [[2]][[25]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[25]]$exampleUses
+## list()
+## 
+## [[2]][[25]]$relatedWords
+## list()
+## 
+## [[2]][[25]]$labels
+## [[2]][[25]]$labels[[1]]
+## [[2]][[25]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[2]][[25]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## [[2]][[25]]$labels[[2]]
+## [[2]][[25]]$labels[[2]]$text
+## [1] &quot;derogatory&quot;
+## 
+## [[2]][[25]]$labels[[2]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[2]][[25]]$citations
+## list()
+## 
+## [[2]][[25]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[25]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[25]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[25]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[25]]$text
+## [1] &quot;A coward&quot;
+## 
+## [[2]][[25]]$score
+## [1] 0
+## 
+## 
+## [[2]][[26]]
+## [[2]][[26]]$textProns
+## list()
+## 
+## [[2]][[26]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[26]]$exampleUses
+## list()
+## 
+## [[2]][[26]]$relatedWords
+## list()
+## 
+## [[2]][[26]]$labels
+## [[2]][[26]]$labels[[1]]
+## [[2]][[26]]$labels[[1]]$text
+## [1] &quot;derogatory&quot;
+## 
+## [[2]][[26]]$labels[[1]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[2]][[26]]$citations
+## list()
+## 
+## [[2]][[26]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[26]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[26]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[26]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[26]]$text
+## [1] &quot;Someone who is morally reprehensible.&quot;
+## 
+## [[2]][[26]]$score
+## [1] 0
+## 
+## 
+## [[2]][[27]]
+## [[2]][[27]]$textProns
+## list()
+## 
+## [[2]][[27]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[27]]$exampleUses
+## list()
+## 
+## [[2]][[27]]$relatedWords
+## list()
+## 
+## [[2]][[27]]$labels
+## list()
+## 
+## [[2]][[27]]$citations
+## list()
+## 
+## [[2]][[27]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[27]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[27]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[27]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[27]]$text
+## [1] &quot;Any of various mechanical devices for holding, gripping, or fastening something, particularly with a tooth-like projection.&quot;
+## 
+## [[2]][[27]]$score
+## [1] 0
+## 
+## 
+## [[2]][[28]]
+## [[2]][[28]]$textProns
+## list()
+## 
+## [[2]][[28]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[28]]$exampleUses
+## list()
+## 
+## [[2]][[28]]$relatedWords
+## list()
+## 
+## [[2]][[28]]$labels
+## list()
+## 
+## [[2]][[28]]$citations
+## list()
+## 
+## [[2]][[28]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[28]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[28]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[28]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[28]]$text
+## [1] &quot;this sense?) A click or pallet adapted to engage the teeth of a ratchet-wheel, to restrain the back action; a click or pawl. (See also: ratchet, windlass)&quot;
+## 
+## [[2]][[28]]$score
+## [1] 0
+## 
+## 
+## [[2]][[29]]
+## [[2]][[29]]$textProns
+## list()
+## 
+## [[2]][[29]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[29]]$exampleUses
+## list()
+## 
+## [[2]][[29]]$relatedWords
+## list()
+## 
+## [[2]][[29]]$labels
+## list()
+## 
+## [[2]][[29]]$citations
+## list()
+## 
+## [[2]][[29]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[29]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[29]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[29]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[29]]$text
+## [1] &quot;A metal support for logs in a fireplace.&quot;
+## 
+## [[2]][[29]]$score
+## [1] 0
+## 
+## 
+## [[2]][[30]]
+## [[2]][[30]]$textProns
+## list()
+## 
+## [[2]][[30]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[30]]$exampleUses
+## list()
+## 
+## [[2]][[30]]$relatedWords
+## list()
+## 
+## [[2]][[30]]$labels
+## list()
+## 
+## [[2]][[30]]$citations
+## list()
+## 
+## [[2]][[30]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[30]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[30]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[30]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[30]]$text
+## [1] &quot;A hot dog.&quot;
+## 
+## [[2]][[30]]$score
+## [1] 0
+## 
+## 
+## [[2]][[31]]
+## [[2]][[31]]$textProns
+## list()
+## 
+## [[2]][[31]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[31]]$exampleUses
+## list()
+## 
+## [[2]][[31]]$relatedWords
+## list()
+## 
+## [[2]][[31]]$labels
+## [[2]][[31]]$labels[[1]]
+## [[2]][[31]]$labels[[1]]$text
+## [1] &quot;poker slang&quot;
+## 
+## [[2]][[31]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[2]][[31]]$citations
+## list()
+## 
+## [[2]][[31]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[31]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[31]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[31]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[31]]$text
+## [1] &quot;Underdog&quot;
+## 
+## [[2]][[31]]$score
+## [1] 0
+## 
+## 
+## [[2]][[32]]
+## [[2]][[32]]$textProns
+## list()
+## 
+## [[2]][[32]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[32]]$exampleUses
+## list()
+## 
+## [[2]][[32]]$relatedWords
+## list()
+## 
+## [[2]][[32]]$labels
+## [[2]][[32]]$labels[[1]]
+## [[2]][[32]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[2]][[32]]$labels[[1]]$type
+## [1] &quot;register&quot;
+## 
+## 
+## 
+## [[2]][[32]]$citations
+## list()
+## 
+## [[2]][[32]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[32]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[32]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[32]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[32]]$text
+## [1] &quot;feet.&quot;
+## 
+## [[2]][[32]]$score
+## [1] 0
+## 
+## 
+## [[2]][[33]]
+## [[2]][[33]]$textProns
+## list()
+## 
+## [[2]][[33]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[33]]$exampleUses
+## list()
+## 
+## [[2]][[33]]$relatedWords
+## list()
+## 
+## [[2]][[33]]$labels
+## [[2]][[33]]$labels[[1]]
+## [[2]][[33]]$labels[[1]]$text
+## [1] &quot;transitive&quot;
+## 
+## [[2]][[33]]$labels[[1]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## 
+## [[2]][[33]]$citations
+## list()
+## 
+## [[2]][[33]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[33]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[33]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[33]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[2]][[33]]$text
+## [1] &quot;To pursue with the intent to catch.&quot;
+## 
+## [[2]][[33]]$score
+## [1] 0
+## 
+## 
+## [[2]][[34]]
+## [[2]][[34]]$textProns
+## list()
+## 
+## [[2]][[34]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[34]]$exampleUses
+## list()
+## 
+## [[2]][[34]]$relatedWords
+## list()
+## 
+## [[2]][[34]]$labels
+## [[2]][[34]]$labels[[1]]
+## [[2]][[34]]$labels[[1]]$text
+## [1] &quot;transitive&quot;
+## 
+## [[2]][[34]]$labels[[1]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## 
+## [[2]][[34]]$citations
+## list()
+## 
+## [[2]][[34]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[34]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[34]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[34]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[2]][[34]]$text
+## [1] &quot;To follow in an annoying way, to constantly be affected by.&quot;
+## 
+## [[2]][[34]]$score
+## [1] 0
+## 
+## 
+## [[2]][[35]]
+## [[2]][[35]]$textProns
+## list()
+## 
+## [[2]][[35]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[35]]$exampleUses
+## list()
+## 
+## [[2]][[35]]$relatedWords
+## list()
+## 
+## [[2]][[35]]$labels
+## [[2]][[35]]$labels[[1]]
+## [[2]][[35]]$labels[[1]]$text
+## [1] &quot;transitive&quot;
+## 
+## [[2]][[35]]$labels[[1]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## [[2]][[35]]$labels[[2]]
+## [[2]][[35]]$labels[[2]]$text
+## [1] &quot;nautical&quot;
+## 
+## [[2]][[35]]$labels[[2]]$type
+## [1] &quot;usage&quot;
+## 
+## 
+## 
+## [[2]][[35]]$citations
+## list()
+## 
+## [[2]][[35]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[35]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[35]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[35]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[2]][[35]]$text
+## [1] &quot;To fasten a hatch securely.&quot;
+## 
+## [[2]][[35]]$score
+## [1] 0
+## 
+## 
+## [[2]][[36]]
+## [[2]][[36]]$textProns
+## list()
+## 
+## [[2]][[36]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[36]]$exampleUses
+## list()
+## 
+## [[2]][[36]]$relatedWords
+## list()
+## 
+## [[2]][[36]]$labels
+## [[2]][[36]]$labels[[1]]
+## [[2]][[36]]$labels[[1]]$text
+## [1] &quot;intransitive&quot;
+## 
+## [[2]][[36]]$labels[[1]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## 
+## [[2]][[36]]$citations
+## list()
+## 
+## [[2]][[36]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[36]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[36]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[36]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[2]][[36]]$text
+## [1] &quot;To watch, or participate, in sexual activity in a public place, on the pretence of walking the dog; see also dogging.&quot;
+## 
+## [[2]][[36]]$score
+## [1] 0
+## 
+## 
+## [[2]][[37]]
+## [[2]][[37]]$textProns
+## list()
+## 
+## [[2]][[37]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[37]]$exampleUses
+## list()
+## 
+## [[2]][[37]]$relatedWords
+## list()
+## 
+## [[2]][[37]]$labels
+## [[2]][[37]]$labels[[1]]
+## [[2]][[37]]$labels[[1]]$text
+## [1] &quot;intransitive&quot;
+## 
+## [[2]][[37]]$labels[[1]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## [[2]][[37]]$labels[[2]]
+## [[2]][[37]]$labels[[2]]$text
+## [1] &quot;transitive&quot;
+## 
+## [[2]][[37]]$labels[[2]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## 
+## [[2]][[37]]$citations
+## list()
+## 
+## [[2]][[37]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[37]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[37]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[37]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[2]][[37]]$text
+## [1] &quot;To intentionally restrict one&#39;s productivity as employee; to work at the slowest rate that goes unpunished.&quot;
+## 
+## [[2]][[37]]$score
+## [1] 0
+## 
+## 
+## [[2]][[38]]
+## [[2]][[38]]$textProns
+## list()
+## 
+## [[2]][[38]]$sourceDictionary
+## [1] &quot;wiktionary&quot;
+## 
+## [[2]][[38]]$exampleUses
+## list()
+## 
+## [[2]][[38]]$relatedWords
+## list()
+## 
+## [[2]][[38]]$labels
+## [[2]][[38]]$labels[[1]]
+## [[2]][[38]]$labels[[1]]$text
+## [1] &quot;intransitive&quot;
+## 
+## [[2]][[38]]$labels[[1]]$type
+## [1] &quot;grammar&quot;
+## 
+## 
+## 
+## [[2]][[38]]$citations
+## list()
+## 
+## [[2]][[38]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[38]]$attributionText
+## [1] &quot;from Wiktionary, Creative Commons Attribution/Share-Alike License&quot;
+## 
+## [[2]][[38]]$attributionUrl
+## [1] &quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;
+## 
+## [[2]][[38]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[2]][[38]]$text
+## [1] &quot;To position oneself on all fours, after the manner of a dog.&quot;
+## 
+## [[2]][[38]]$score
+## [1] 0
+## 
+## 
+## [[2]][[39]]
+## [[2]][[39]]$textProns
+## list()
+## 
+## [[2]][[39]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[39]]$exampleUses
+## list()
+## 
+## [[2]][[39]]$relatedWords
+## list()
+## 
+## [[2]][[39]]$labels
+## [[2]][[39]]$labels[[1]]
+## [[2]][[39]]$labels[[1]]$text
+## [1] &quot;(Zoöl.)&quot;
+## 
+## [[2]][[39]]$labels[[1]]$type
+## [1] &quot;fld&quot;
+## 
+## 
+## 
+## [[2]][[39]]$citations
+## list()
+## 
+## [[2]][[39]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[39]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[2]][[39]]$seqString
+## [1] &quot;1.&quot;
+## 
+## [[2]][[39]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[39]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[39]]$notes
+## [[2]][[39]]$notes[[1]]
+## [[2]][[39]]$notes[[1]]$pos
+## [1] 0
+## 
+## [[2]][[39]]$notes[[1]]$value
+## [1] &quot;The dog is distinguished above all others of the inferior animals for intelligence, docility, and attachment to man. There are numerous carefully bred varieties, as the akita, beagle, bloodhound, bulldog, coachdog, collie, Danish dog, foxhound, greyhound, mastiff, pointer, poodle, St. Bernard, setter, spaniel, spitz, terrier, German shepherd, pit bull, Chihuahua, etc. There are also many mixed breeds, and partially domesticated varieties, as well as wild dogs, like the dingo and dhole. (See these names in the Vocabulary.)&quot;
+## 
+## [[2]][[39]]$notes[[1]]$appliesTo
+## list()
+## 
+## 
+## 
+## [[2]][[39]]$text
+## [1] &quot;A quadruped of the genus Canis, esp. the domestic dog (Canis familiaris).&quot;
+## 
+## [[2]][[39]]$score
+## [1] 0
+## 
+## 
+## [[2]][[40]]
+## [[2]][[40]]$textProns
+## list()
+## 
+## [[2]][[40]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[40]]$exampleUses
+## list()
+## 
+## [[2]][[40]]$relatedWords
+## list()
+## 
+## [[2]][[40]]$labels
+## list()
+## 
+## [[2]][[40]]$citations
+## [[2]][[40]]$citations[[1]]
+## [[2]][[40]]$citations[[1]]$source
+## [1] &quot; 2 Kings viii. 13 (Rev. Ver. )&quot;
+## 
+## [[2]][[40]]$citations[[1]]$cite
+## [1] &quot;What is thy servant, which is but a dog, that he should do this great thing?&quot;
+## 
+## 
+## 
+## [[2]][[40]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[40]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[2]][[40]]$seqString
+## [1] &quot;2.&quot;
+## 
+## [[2]][[40]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[40]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[40]]$text
+## [1] &quot;A mean, worthless fellow; a wretch.&quot;
+## 
+## [[2]][[40]]$score
+## [1] 0
+## 
+## 
+## [[2]][[41]]
+## [[2]][[41]]$textProns
+## list()
+## 
+## [[2]][[41]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[41]]$exampleUses
+## [[2]][[41]]$exampleUses[[1]]
+## [[2]][[41]]$exampleUses[[1]]$text
+## [1] &quot;a sly dog; a lazy dog.&quot;
+## 
+## 
+## 
+## [[2]][[41]]$relatedWords
+## list()
+## 
+## [[2]][[41]]$labels
+## [[2]][[41]]$labels[[1]]
+## [[2]][[41]]$labels[[1]]$text
+## [1] &quot;colloq.&quot;
+## 
+## [[2]][[41]]$labels[[1]]$type
+## [1] &quot;mark&quot;
+## 
+## 
+## 
+## [[2]][[41]]$citations
+## list()
+## 
+## [[2]][[41]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[41]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[2]][[41]]$seqString
+## [1] &quot;3.&quot;
+## 
+## [[2]][[41]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[41]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[41]]$text
+## [1] &quot;A fellow; -- used humorously or contemptuously&quot;
+## 
+## [[2]][[41]]$score
+## [1] 0
+## 
+## 
+## [[2]][[42]]
+## [[2]][[42]]$textProns
+## list()
+## 
+## [[2]][[42]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[42]]$exampleUses
+## list()
+## 
+## [[2]][[42]]$relatedWords
+## list()
+## 
+## [[2]][[42]]$labels
+## [[2]][[42]]$labels[[1]]
+## [[2]][[42]]$labels[[1]]$text
+## [1] &quot;(Astron.)&quot;
+## 
+## [[2]][[42]]$labels[[1]]$type
+## [1] &quot;fld&quot;
+## 
+## 
+## 
+## [[2]][[42]]$citations
+## list()
+## 
+## [[2]][[42]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[42]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[2]][[42]]$seqString
+## [1] &quot;4.&quot;
+## 
+## [[2]][[42]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[42]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[42]]$text
+## [1] &quot;One of the two constellations, Canis Major and Canis Minor, or the Greater Dog and the Lesser Dog. Canis Major contains the Dog Star (Sirius).&quot;
+## 
+## [[2]][[42]]$score
+## [1] 0
+## 
+## 
+## [[2]][[43]]
+## [[2]][[43]]$textProns
+## list()
+## 
+## [[2]][[43]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[43]]$exampleUses
+## list()
+## 
+## [[2]][[43]]$relatedWords
+## list()
+## 
+## [[2]][[43]]$labels
+## list()
+## 
+## [[2]][[43]]$citations
+## list()
+## 
+## [[2]][[43]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[43]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[2]][[43]]$seqString
+## [1] &quot;5.&quot;
+## 
+## [[2]][[43]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[43]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[43]]$text
+## [1] &quot;An iron for holding wood in a fireplace; a firedog; an andiron.&quot;
+## 
+## [[2]][[43]]$score
+## [1] 0
+## 
+## 
+## [[2]][[44]]
+## [[2]][[44]]$textProns
+## list()
+## 
+## [[2]][[44]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[44]]$exampleUses
+## list()
+## 
+## [[2]][[44]]$relatedWords
+## list()
+## 
+## [[2]][[44]]$labels
+## [[2]][[44]]$labels[[1]]
+## [[2]][[44]]$labels[[1]]$text
+## [1] &quot;(Mech.)&quot;
+## 
+## [[2]][[44]]$labels[[1]]$type
+## [1] &quot;fld&quot;
+## 
+## 
+## 
+## [[2]][[44]]$citations
+## list()
+## 
+## [[2]][[44]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[44]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[2]][[44]]$seqString
+## [1] &quot;6.&quot;
+## 
+## [[2]][[44]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[44]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[44]]$score
+## [1] 0
+## 
+## 
+## [[2]][[45]]
+## [[2]][[45]]$textProns
+## list()
+## 
+## [[2]][[45]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[45]]$exampleUses
+## list()
+## 
+## [[2]][[45]]$relatedWords
+## list()
+## 
+## [[2]][[45]]$labels
+## list()
+## 
+## [[2]][[45]]$citations
+## list()
+## 
+## [[2]][[45]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[45]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[2]][[45]]$seqString
+## [1] &quot;6 (a)&quot;
+## 
+## [[2]][[45]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[45]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[45]]$text
+## [1] &quot;A grappling iron, with a claw or claws, for fastening into wood or other heavy articles, for the purpose of raising or moving them.&quot;
+## 
+## [[2]][[45]]$score
+## [1] 0
+## 
+## 
+## [[2]][[46]]
+## [[2]][[46]]$textProns
+## list()
+## 
+## [[2]][[46]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[46]]$exampleUses
+## list()
+## 
+## [[2]][[46]]$relatedWords
+## list()
+## 
+## [[2]][[46]]$labels
+## list()
+## 
+## [[2]][[46]]$citations
+## list()
+## 
+## [[2]][[46]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[46]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[2]][[46]]$seqString
+## [1] &quot;6 (b)&quot;
+## 
+## [[2]][[46]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[46]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[46]]$text
+## [1] &quot;An iron with fangs fastening a log in a saw pit, or on the carriage of a sawmill.&quot;
+## 
+## [[2]][[46]]$score
+## [1] 0
+## 
+## 
+## [[2]][[47]]
+## [[2]][[47]]$textProns
+## list()
+## 
+## [[2]][[47]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[47]]$exampleUses
+## list()
+## 
+## [[2]][[47]]$relatedWords
+## list()
+## 
+## [[2]][[47]]$labels
+## list()
+## 
+## [[2]][[47]]$citations
+## list()
+## 
+## [[2]][[47]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[47]]$sequence
+## [1] &quot;8&quot;
+## 
+## [[2]][[47]]$seqString
+## [1] &quot;6 (c)&quot;
+## 
+## [[2]][[47]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[47]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[47]]$text
+## [1] &quot;A piece in machinery acting as a catch or clutch; especially, the carrier of a lathe, also, an adjustable stop to change motion, as in a machine tool.&quot;
+## 
+## [[2]][[47]]$score
+## [1] 0
+## 
+## 
+## [[2]][[48]]
+## [[2]][[48]]$textProns
+## list()
+## 
+## [[2]][[48]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[48]]$exampleUses
+## list()
+## 
+## [[2]][[48]]$relatedWords
+## list()
+## 
+## [[2]][[48]]$labels
+## [[2]][[48]]$labels[[1]]
+## [[2]][[48]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[2]][[48]]$labels[[1]]$type
+## [1] &quot;mark&quot;
+## 
+## 
+## 
+## [[2]][[48]]$citations
+## list()
+## 
+## [[2]][[48]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[48]]$sequence
+## [1] &quot;9&quot;
+## 
+## [[2]][[48]]$seqString
+## [1] &quot;7.&quot;
+## 
+## [[2]][[48]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[48]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[48]]$text
+## [1] &quot;an ugly or crude person, especially an ugly woman.&quot;
+## 
+## [[2]][[48]]$score
+## [1] 0
+## 
+## 
+## [[2]][[49]]
+## [[2]][[49]]$textProns
+## list()
+## 
+## [[2]][[49]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[49]]$exampleUses
+## list()
+## 
+## [[2]][[49]]$relatedWords
+## list()
+## 
+## [[2]][[49]]$labels
+## [[2]][[49]]$labels[[1]]
+## [[2]][[49]]$labels[[1]]$text
+## [1] &quot;slang&quot;
+## 
+## [[2]][[49]]$labels[[1]]$type
+## [1] &quot;mark&quot;
+## 
+## 
+## 
+## [[2]][[49]]$citations
+## list()
+## 
+## [[2]][[49]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[49]]$sequence
+## [1] &quot;10&quot;
+## 
+## [[2]][[49]]$seqString
+## [1] &quot;8.&quot;
+## 
+## [[2]][[49]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[49]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[49]]$notes
+## [[2]][[49]]$notes[[1]]
+## [[2]][[49]]$notes[[1]]$pos
+## [1] 0
+## 
+## [[2]][[49]]$notes[[1]]$value
+## [1] &quot;☞ Dog is used adjectively or in composition, commonly in the sense of relating to, or characteristic of, a dog. It is also used to denote a male; as, dog fox or g-fox, a male fox; dog otter or dog-otter, dog wolf, etc.; -- also to denote a thing of cheap or mean quality; as, dog Latin.&quot;
+## 
+## [[2]][[49]]$notes[[1]]$appliesTo
+## list()
+## 
+## 
+## 
+## [[2]][[49]]$text
+## [1] &quot;a hot dog.&quot;
+## 
+## [[2]][[49]]$score
+## [1] 0
+## 
+## 
+## [[2]][[50]]
+## [[2]][[50]]$textProns
+## list()
+## 
+## [[2]][[50]]$sourceDictionary
+## [1] &quot;gcide&quot;
+## 
+## [[2]][[50]]$exampleUses
+## list()
+## 
+## [[2]][[50]]$relatedWords
+## list()
+## 
+## [[2]][[50]]$labels
+## list()
+## 
+## [[2]][[50]]$citations
+## [[2]][[50]]$citations[[1]]
+## [[2]][[50]]$citations[[1]]$source
+## [1] &quot; Pope.&quot;
+## 
+## [[2]][[50]]$citations[[1]]$cite
+## [1] &quot;I have been pursued, dogged, and waylaid.&quot;
+## 
+## 
+## [[2]][[50]]$citations[[2]]
+## [[2]][[50]]$citations[[2]]$source
+## [1] &quot;Burroughs.&quot;
+## 
+## [[2]][[50]]$citations[[2]]$cite
+## [1] &quot;Your sins will dog you, pursue you.&quot;
+## 
+## 
+## [[2]][[50]]$citations[[3]]
+## [[2]][[50]]$citations[[3]]$source
+## [1] &quot; South.&quot;
+## 
+## [[2]][[50]]$citations[[3]]$cite
+## [1] &quot;Eager ill-bred petitioners, who do not so properly supplicate as hunt the person whom they address to, dogging him from place to place, till they even extort an answer to their rude requests.&quot;
+## 
+## 
+## 
+## [[2]][[50]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[50]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[2]][[50]]$attributionText
+## [1] &quot;from the GNU version of the Collaborative International Dictionary of English&quot;
+## 
+## [[2]][[50]]$partOfSpeech
+## [1] &quot;verb-transitive&quot;
+## 
+## [[2]][[50]]$text
+## [1] &quot;To hunt or track like a hound; to follow insidiously or indefatigably; to chase with a dog or dogs; to worry, as if by dogs; to hound with importunity.&quot;
+## 
+## [[2]][[50]]$score
+## [1] 0
+## 
+## 
+## [[2]][[51]]
+## [[2]][[51]]$textProns
+## list()
+## 
+## [[2]][[51]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[51]]$exampleUses
+## list()
+## 
+## [[2]][[51]]$relatedWords
+## list()
+## 
+## [[2]][[51]]$labels
+## list()
+## 
+## [[2]][[51]]$citations
+## list()
+## 
+## [[2]][[51]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[51]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[2]][[51]]$extendedText
+## [1] &quot;The origin of the dog is a question most difficult of solution. Some think the breed is derived from the wolf, others affirm it to be from a familiarized jackal; all agree that no trace of it is to be found in a primitive state, the dhole of India and the dingo of Australia being wild descendants from domesticated ancestors. The view now generally taken by naturalists is that the dog is neither a species, in the zoölogical sense, nor even the descendant of any one species modified by domestication, but that the dogs of different parts of the world have a correspondingly various ancestry, from different wild species of the genus Canis, as wolves, foxes, and jackals. This view is supported not only by the enormous differences between dogs, but also by the readiness with which nearly all dogs cross with their wild relatives; and, accordingly, the name Canis familiaris is a conventional rather than a proper zoölogical designation of the dog as a species. No satisfactory classification of the different kinds of dogs has been arrived at, what some naturalists regard as types being regarded by others as mere mongrels. An old classification grouped dogs in three classes, the Celeres, Sagaces, and Pugnaces. Colonel Hamilton Smith groups the domestic dog into six sections: the wolf-dogs, including the Siberian, Eskimo, Newfoundland, Great St. Bernard, sheep-dog, etc.; watch- and cattle-dogs, including the German boar-hound, Danish dog, dog of the North American Indians, etc.; the greyhounds, as the different kinds of greyhound, Irish hound, lurcher, Egyptian street-dog, etc.; the hounds, as the bloodhound, staghound, foxhound, harrier, beagle, pointer, setter, spaniel, springer, cocker, Blenheim dog, poodle, etc.; the curs, including the terrier and its allies; the mastiffs, including the different kinds of mastiff, bulldog, pug-dog, etc. All these are artificial varieties, having comparatively little stability, their distinctive characters being soon lost by reversion to a more generalized type if they are left to interbreed. This tendency to reversion requires to be constantly counteracted by “artificial selection” at the hands of breeders, in order that the several strains may be kept pure, and their peculiarities be perpetuated along the desired lines of specialization. The best-bred dogs, of whatever kind, are those furthest removed from an original or common type of structure. The differences between dogs of all kinds are vastly greater than those found among individuals of any species in a state of nature; so great that, were they not known to be artificial, the dog would represent several different genera of the family Canidœ in ordinary zoological classification. In fact, some genera, based upon actual and constant differences in the dental formula, have been named in order to signalize certain structural modifications which are found to exist, affording an example of the evolution of generic characters as well as of specific differences. These variations extend not only to size and general configuration, character of the pelage, and other outward features, but also to positive osteological and dental peculiarities, more marked probably than those of any other domesticated animals. The corresponding physiological and psychological differences are equally decided, as witnessed in the dispositions and temperaments of dogs, their comparative docility, intelligence, etc., and consequently the uses to which they are or may be put. In the matter of size alone, for example, some toy dogs are tiny enough to stand easily on one of the fore paws of a large dog. Throughout the endless varieties, however, the influence of heredity is witnessed in the readiness with which dogs interbreed with one another, and cross with wolves, foxes, and jackals, bearing fertile progeny in all cases, and the readiness with which they revert to the wild state of their several ancestors. See the names of the several breeds. See also Canidœ and Canis.&quot;
+## 
+## [[2]][[51]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[51]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[51]]$text
+## [1] &quot;A quadruped of the genus Canis, C. familiaris.&quot;
+## 
+## [[2]][[51]]$score
+## [1] 0
+## 
+## 
+## [[2]][[52]]
+## [[2]][[52]]$textProns
+## list()
+## 
+## [[2]][[52]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[52]]$exampleUses
+## list()
+## 
+## [[2]][[52]]$relatedWords
+## list()
+## 
+## [[2]][[52]]$labels
+## list()
+## 
+## [[2]][[52]]$citations
+## list()
+## 
+## [[2]][[52]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[52]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[2]][[52]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[52]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[52]]$text
+## [1] &quot;In distinguishing sex, a male dog, as opposed to bitch; hence sometimes used in composition for the male of other animals, as in dog-fox, dog-ape.&quot;
+## 
+## [[2]][[52]]$score
+## [1] 0
+## 
+## 
+## [[2]][[53]]
+## [[2]][[53]]$textProns
+## list()
+## 
+## [[2]][[53]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[53]]$exampleUses
+## list()
+## 
+## [[2]][[53]]$relatedWords
+## list()
+## 
+## [[2]][[53]]$labels
+## list()
+## 
+## [[2]][[53]]$citations
+## list()
+## 
+## [[2]][[53]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[53]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[2]][[53]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[53]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[53]]$text
+## [1] &quot;plural Canine quadrupeds in general; the family Canidœ (which see).&quot;
+## 
+## [[2]][[53]]$score
+## [1] 0
+## 
+## 
+## [[2]][[54]]
+## [[2]][[54]]$textProns
+## list()
+## 
+## [[2]][[54]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[54]]$exampleUses
+## list()
+## 
+## [[2]][[54]]$relatedWords
+## list()
+## 
+## [[2]][[54]]$labels
+## list()
+## 
+## [[2]][[54]]$citations
+## list()
+## 
+## [[2]][[54]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[54]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[2]][[54]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[54]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[54]]$text
+## [1] &quot;The prairie-dog.&quot;
+## 
+## [[2]][[54]]$score
+## [1] 0
+## 
+## 
+## [[2]][[55]]
+## [[2]][[55]]$textProns
+## list()
+## 
+## [[2]][[55]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[55]]$exampleUses
+## list()
+## 
+## [[2]][[55]]$relatedWords
+## list()
+## 
+## [[2]][[55]]$labels
+## list()
+## 
+## [[2]][[55]]$citations
+## list()
+## 
+## [[2]][[55]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[55]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[2]][[55]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[55]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[55]]$text
+## [1] &quot;The dogfish.&quot;
+## 
+## [[2]][[55]]$score
+## [1] 0
+## 
+## 
+## [[2]][[56]]
+## [[2]][[56]]$textProns
+## list()
+## 
+## [[2]][[56]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[56]]$exampleUses
+## list()
+## 
+## [[2]][[56]]$relatedWords
+## list()
+## 
+## [[2]][[56]]$labels
+## list()
+## 
+## [[2]][[56]]$citations
+## list()
+## 
+## [[2]][[56]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[56]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[2]][[56]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[56]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[56]]$text
+## [1] &quot;A mean, worthless fellow; a currish or sneaking scoundrel: applied in reproach or contempt.&quot;
+## 
+## [[2]][[56]]$score
+## [1] 0
+## 
+## 
+## [[2]][[57]]
+## [[2]][[57]]$textProns
+## list()
+## 
+## [[2]][[57]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[57]]$exampleUses
+## list()
+## 
+## [[2]][[57]]$relatedWords
+## list()
+## 
+## [[2]][[57]]$labels
+## list()
+## 
+## [[2]][[57]]$citations
+## list()
+## 
+## [[2]][[57]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[57]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[2]][[57]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[57]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[57]]$text
+## [1] &quot;A gay or rakish man, especially if young; a sport or gallant: applied, usually with an epithet (young, impudent, etc.), in mild or humorous reprobation.&quot;
+## 
+## [[2]][[57]]$score
+## [1] 0
+## 
+## 
+## [[2]][[58]]
+## [[2]][[58]]$textProns
+## list()
+## 
+## [[2]][[58]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[58]]$exampleUses
+## list()
+## 
+## [[2]][[58]]$relatedWords
+## list()
+## 
+## [[2]][[58]]$labels
+## list()
+## 
+## [[2]][[58]]$citations
+## list()
+## 
+## [[2]][[58]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[58]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[2]][[58]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[58]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[58]]$text
+## [1] &quot;In astronomy: [capitalized] One of two ancient constellations lying south of the zodiac, known as Canis Major and Canis Minor. See Canis.&quot;
+## 
+## [[2]][[58]]$score
+## [1] 0
+## 
+## 
+## [[2]][[59]]
+## [[2]][[59]]$textProns
+## list()
+## 
+## [[2]][[59]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[59]]$exampleUses
+## list()
+## 
+## [[2]][[59]]$relatedWords
+## list()
+## 
+## [[2]][[59]]$labels
+## list()
+## 
+## [[2]][[59]]$citations
+## list()
+## 
+## [[2]][[59]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[59]]$sequence
+## [1] &quot;8&quot;
+## 
+## [[2]][[59]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[59]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[59]]$text
+## [1] &quot;The dog-star.&quot;
+## 
+## [[2]][[59]]$score
+## [1] 0
+## 
+## 
+## [[2]][[60]]
+## [[2]][[60]]$textProns
+## list()
+## 
+## [[2]][[60]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[60]]$exampleUses
+## list()
+## 
+## [[2]][[60]]$relatedWords
+## list()
+## 
+## [[2]][[60]]$labels
+## list()
+## 
+## [[2]][[60]]$citations
+## list()
+## 
+## [[2]][[60]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[60]]$sequence
+## [1] &quot;9&quot;
+## 
+## [[2]][[60]]$extendedText
+## [1] &quot;plural Andirons: specifically called fire-dogs.&quot;
+## 
+## [[2]][[60]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[60]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[60]]$text
+## [1] &quot;A name of various mechanical devices, tools, and pieces of machinery.&quot;
+## 
+## [[2]][[60]]$score
+## [1] 0
+## 
+## 
+## [[2]][[61]]
+## [[2]][[61]]$textProns
+## list()
+## 
+## [[2]][[61]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[61]]$exampleUses
+## list()
+## 
+## [[2]][[61]]$relatedWords
+## list()
+## 
+## [[2]][[61]]$labels
+## list()
+## 
+## [[2]][[61]]$citations
+## list()
+## 
+## [[2]][[61]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[61]]$sequence
+## [1] &quot;10&quot;
+## 
+## [[2]][[61]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[61]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[61]]$text
+## [1] &quot;Same as dog-head, 1.&quot;
+## 
+## [[2]][[61]]$score
+## [1] 0
+## 
+## 
+## [[2]][[62]]
+## [[2]][[62]]$textProns
+## list()
+## 
+## [[2]][[62]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[62]]$exampleUses
+## list()
+## 
+## [[2]][[62]]$relatedWords
+## list()
+## 
+## [[2]][[62]]$labels
+## list()
+## 
+## [[2]][[62]]$citations
+## list()
+## 
+## [[2]][[62]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[62]]$sequence
+## [1] &quot;11&quot;
+## 
+## [[2]][[62]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[62]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[62]]$text
+## [1] &quot;A sort of iron hook or bar, with one or more sharp fangs or claws at one end, which may be fastened into a piece of wood or other heavy article, for the purpose of moving it: used with various specific prefixes, See cut.&quot;
+## 
+## [[2]][[62]]$score
+## [1] 0
+## 
+## 
+## [[2]][[63]]
+## [[2]][[63]]$textProns
+## list()
+## 
+## [[2]][[63]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[63]]$exampleUses
+## list()
+## 
+## [[2]][[63]]$relatedWords
+## list()
+## 
+## [[2]][[63]]$labels
+## list()
+## 
+## [[2]][[63]]$citations
+## list()
+## 
+## [[2]][[63]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[63]]$sequence
+## [1] &quot;12&quot;
+## 
+## [[2]][[63]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[63]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[63]]$text
+## [1] &quot;An iron with fangs for fastening a log in a saw-pit or on the carriage of a saw-mill.&quot;
+## 
+## [[2]][[63]]$score
+## [1] 0
+## 
+## 
+## [[2]][[64]]
+## [[2]][[64]]$textProns
+## list()
+## 
+## [[2]][[64]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[64]]$exampleUses
+## list()
+## 
+## [[2]][[64]]$relatedWords
+## list()
+## 
+## [[2]][[64]]$labels
+## list()
+## 
+## [[2]][[64]]$citations
+## list()
+## 
+## [[2]][[64]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[64]]$sequence
+## [1] &quot;13&quot;
+## 
+## [[2]][[64]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[64]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[64]]$text
+## [1] &quot;Any part of a machine acting as a claw or clutch, as the carrier of a lathe, or an adjustable stop to change the motion of a machine-tool.&quot;
+## 
+## [[2]][[64]]$score
+## [1] 0
+## 
+## 
+## [[2]][[65]]
+## [[2]][[65]]$textProns
+## list()
+## 
+## [[2]][[65]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[65]]$exampleUses
+## list()
+## 
+## [[2]][[65]]$relatedWords
+## list()
+## 
+## [[2]][[65]]$labels
+## list()
+## 
+## [[2]][[65]]$citations
+## list()
+## 
+## [[2]][[65]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[65]]$sequence
+## [1] &quot;14&quot;
+## 
+## [[2]][[65]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[65]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[65]]$text
+## [1] &quot;plural The set-screws which adjust the bed-tool of a punching-press.&quot;
+## 
+## [[2]][[65]]$score
+## [1] 0
+## 
+## 
+## [[2]][[66]]
+## [[2]][[66]]$textProns
+## list()
+## 
+## [[2]][[66]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[66]]$exampleUses
+## list()
+## 
+## [[2]][[66]]$relatedWords
+## list()
+## 
+## [[2]][[66]]$labels
+## list()
+## 
+## [[2]][[66]]$citations
+## list()
+## 
+## [[2]][[66]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[66]]$sequence
+## [1] &quot;15&quot;
+## 
+## [[2]][[66]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[66]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[66]]$text
+## [1] &quot;A grappling-iron which lifts the monkey or hammer of a pile-driver.&quot;
+## 
+## [[2]][[66]]$score
+## [1] 0
+## 
+## 
+## [[2]][[67]]
+## [[2]][[67]]$textProns
+## list()
+## 
+## [[2]][[67]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[67]]$exampleUses
+## list()
+## 
+## [[2]][[67]]$relatedWords
+## list()
+## 
+## [[2]][[67]]$labels
+## list()
+## 
+## [[2]][[67]]$citations
+## list()
+## 
+## [[2]][[67]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[67]]$sequence
+## [1] &quot;16&quot;
+## 
+## [[2]][[67]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[67]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[67]]$text
+## [1] &quot;A click or pallet to restrain the back-action of a ratchet-wheel by engaging the teeth; a pawl.&quot;
+## 
+## [[2]][[67]]$score
+## [1] 0
+## 
+## 
+## [[2]][[68]]
+## [[2]][[68]]$textProns
+## list()
+## 
+## [[2]][[68]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[68]]$exampleUses
+## list()
+## 
+## [[2]][[68]]$relatedWords
+## list()
+## 
+## [[2]][[68]]$labels
+## list()
+## 
+## [[2]][[68]]$citations
+## list()
+## 
+## [[2]][[68]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[68]]$sequence
+## [1] &quot;17&quot;
+## 
+## [[2]][[68]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[68]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[68]]$text
+## [1] &quot;plural In ship-building, the final supports which are knocked aside when a ship is launched; a dogshore.&quot;
+## 
+## [[2]][[68]]$score
+## [1] 0
+## 
+## 
+## [[2]][[69]]
+## [[2]][[69]]$textProns
+## list()
+## 
+## [[2]][[69]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[69]]$exampleUses
+## list()
+## 
+## [[2]][[69]]$relatedWords
+## list()
+## 
+## [[2]][[69]]$labels
+## list()
+## 
+## [[2]][[69]]$citations
+## list()
+## 
+## [[2]][[69]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[69]]$sequence
+## [1] &quot;18&quot;
+## 
+## [[2]][[69]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[69]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[69]]$text
+## [1] &quot;In a lock, a tooth, projection, tusk, or jag which acts as a detent.&quot;
+## 
+## [[2]][[69]]$score
+## [1] 0
+## 
+## 
+## [[2]][[70]]
+## [[2]][[70]]$textProns
+## list()
+## 
+## [[2]][[70]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[70]]$exampleUses
+## list()
+## 
+## [[2]][[70]]$relatedWords
+## list()
+## 
+## [[2]][[70]]$labels
+## list()
+## 
+## [[2]][[70]]$citations
+## list()
+## 
+## [[2]][[70]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[70]]$sequence
+## [1] &quot;19&quot;
+## 
+## [[2]][[70]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[70]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[70]]$text
+## [1] &quot;A grab used to grasp well-tubes or -tools, to withdraw them from bored, drilled, or driven wells.&quot;
+## 
+## [[2]][[70]]$score
+## [1] 0
+## 
+## 
+## [[2]][[71]]
+## [[2]][[71]]$textProns
+## list()
+## 
+## [[2]][[71]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[71]]$exampleUses
+## list()
+## 
+## [[2]][[71]]$relatedWords
+## list()
+## 
+## [[2]][[71]]$labels
+## list()
+## 
+## [[2]][[71]]$citations
+## list()
+## 
+## [[2]][[71]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[71]]$sequence
+## [1] &quot;20&quot;
+## 
+## [[2]][[71]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[71]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[71]]$text
+## [1] &quot;plural Nippers used in wire-drawing. They resemble carpenters&#39; strong pincers or pliers, and are sometimes closed by a sliding ring at the end of the strap or chain which slides down the handles of the nippers.&quot;
+## 
+## [[2]][[71]]$score
+## [1] 0
+## 
+## 
+## [[2]][[72]]
+## [[2]][[72]]$textProns
+## list()
+## 
+## [[2]][[72]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[72]]$exampleUses
+## list()
+## 
+## [[2]][[72]]$relatedWords
+## list()
+## 
+## [[2]][[72]]$labels
+## list()
+## 
+## [[2]][[72]]$citations
+## list()
+## 
+## [[2]][[72]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[72]]$sequence
+## [1] &quot;21&quot;
+## 
+## [[2]][[72]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[72]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[72]]$text
+## [1] &quot;The painted hyena or cynhyene. See Lycaon.&quot;
+## 
+## [[2]][[72]]$score
+## [1] 0
+## 
+## 
+## [[2]][[73]]
+## [[2]][[73]]$textProns
+## list()
+## 
+## [[2]][[73]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[73]]$exampleUses
+## list()
+## 
+## [[2]][[73]]$relatedWords
+## list()
+## 
+## [[2]][[73]]$labels
+## list()
+## 
+## [[2]][[73]]$citations
+## list()
+## 
+## [[2]][[73]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[73]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[2]][[73]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[73]]$text
+## [1] &quot;To follow like a dog; follow with or as with dogs, as in hunting with dogs; hunt; follow pertinaciously or maliciously; keep at the heels of; worry with importunity: as, to dog deer; to dog a person&#39;s footsteps.&quot;
+## 
+## [[2]][[73]]$score
+## [1] 0
+## 
+## 
+## [[2]][[74]]
+## [[2]][[74]]$textProns
+## list()
+## 
+## [[2]][[74]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[74]]$exampleUses
+## list()
+## 
+## [[2]][[74]]$relatedWords
+## list()
+## 
+## [[2]][[74]]$labels
+## list()
+## 
+## [[2]][[74]]$citations
+## list()
+## 
+## [[2]][[74]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[74]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[2]][[74]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[74]]$text
+## [1] &quot;To fasten, as a log by means of a dog (see dog, n., 9 ), for sawing.&quot;
+## 
+## [[2]][[74]]$score
+## [1] 0
+## 
+## 
+## [[2]][[75]]
+## [[2]][[75]]$textProns
+## list()
+## 
+## [[2]][[75]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[75]]$exampleUses
+## list()
+## 
+## [[2]][[75]]$relatedWords
+## list()
+## 
+## [[2]][[75]]$labels
+## list()
+## 
+## [[2]][[75]]$citations
+## list()
+## 
+## [[2]][[75]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[75]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[2]][[75]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[75]]$text
+## [1] &quot;Nautical, to grip, as a rope, to a spar or cable so that the parts bind on each other, to prevent slipping, and causing it to cling.&quot;
+## 
+## [[2]][[75]]$score
+## [1] 0
+## 
+## 
+## [[2]][[76]]
+## [[2]][[76]]$textProns
+## list()
+## 
+## [[2]][[76]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[76]]$exampleUses
+## list()
+## 
+## [[2]][[76]]$relatedWords
+## list()
+## 
+## [[2]][[76]]$labels
+## list()
+## 
+## [[2]][[76]]$citations
+## list()
+## 
+## [[2]][[76]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[76]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[2]][[76]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[76]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[76]]$text
+## [1] &quot;A short, heavy piece of steel, bent and pointed at one end and with an eye or ring at the other. It is used for many purposes in logging, and is sometimes so shaped that a blow directly against the line of draft will loosen it. Also called tail-hook.&quot;
+## 
+## [[2]][[76]]$score
+## [1] 0
+## 
+## 
+## [[2]][[77]]
+## [[2]][[77]]$textProns
+## list()
+## 
+## [[2]][[77]]$sourceDictionary
+## [1] &quot;century&quot;
+## 
+## [[2]][[77]]$exampleUses
+## list()
+## 
+## [[2]][[77]]$relatedWords
+## list()
+## 
+## [[2]][[77]]$labels
+## list()
+## 
+## [[2]][[77]]$citations
+## list()
+## 
+## [[2]][[77]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[77]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[2]][[77]]$attributionText
+## [1] &quot;from The Century Dictionary and Cyclopedia&quot;
+## 
+## [[2]][[77]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[77]]$text
+## [1] &quot;In agriculture, an implement for dragging brush, roots, and poles out of the ground; a brush-puller.&quot;
+## 
+## [[2]][[77]]$score
+## [1] 0
+## 
+## 
+## [[2]][[78]]
+## [[2]][[78]]$textProns
+## list()
+## 
+## [[2]][[78]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[78]]$exampleUses
+## list()
+## 
+## [[2]][[78]]$relatedWords
+## list()
+## 
+## [[2]][[78]]$labels
+## list()
+## 
+## [[2]][[78]]$citations
+## list()
+## 
+## [[2]][[78]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[78]]$sequence
+## [1] &quot;0&quot;
+## 
+## [[2]][[78]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[78]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[78]]$text
+## [1] &quot;metal supports for logs in a fireplace&quot;
+## 
+## [[2]][[78]]$score
+## [1] 0
+## 
+## 
+## [[2]][[79]]
+## [[2]][[79]]$textProns
+## list()
+## 
+## [[2]][[79]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[79]]$exampleUses
+## [[2]][[79]]$exampleUses[[1]]
+## [[2]][[79]]$exampleUses[[1]]$text
+## [1] &quot;the dog chased the rabbit&quot;
+## 
+## 
+## 
+## [[2]][[79]]$relatedWords
+## list()
+## 
+## [[2]][[79]]$labels
+## list()
+## 
+## [[2]][[79]]$citations
+## list()
+## 
+## [[2]][[79]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[79]]$sequence
+## [1] &quot;1&quot;
+## 
+## [[2]][[79]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[79]]$partOfSpeech
+## [1] &quot;verb&quot;
+## 
+## [[2]][[79]]$text
+## [1] &quot;go after with the intent to catch&quot;
+## 
+## [[2]][[79]]$score
+## [1] 0
+## 
+## 
+## [[2]][[80]]
+## [[2]][[80]]$textProns
+## list()
+## 
+## [[2]][[80]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[80]]$exampleUses
+## [[2]][[80]]$exampleUses[[1]]
+## [[2]][[80]]$exampleUses[[1]]$text
+## [1] &quot;she&#39;s a real dog&quot;
+## 
+## 
+## 
+## [[2]][[80]]$relatedWords
+## list()
+## 
+## [[2]][[80]]$labels
+## list()
+## 
+## [[2]][[80]]$citations
+## list()
+## 
+## [[2]][[80]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[80]]$sequence
+## [1] &quot;2&quot;
+## 
+## [[2]][[80]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[80]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[80]]$text
+## [1] &quot;a dull unattractive unpleasant girl or woman&quot;
+## 
+## [[2]][[80]]$score
+## [1] 0
+## 
+## 
+## [[2]][[81]]
+## [[2]][[81]]$textProns
+## list()
+## 
+## [[2]][[81]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[81]]$exampleUses
+## list()
+## 
+## [[2]][[81]]$relatedWords
+## list()
+## 
+## [[2]][[81]]$labels
+## list()
+## 
+## [[2]][[81]]$citations
+## list()
+## 
+## [[2]][[81]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[81]]$sequence
+## [1] &quot;3&quot;
+## 
+## [[2]][[81]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[81]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[81]]$text
+## [1] &quot;someone who is morally reprehensible&quot;
+## 
+## [[2]][[81]]$score
+## [1] 0
+## 
+## 
+## [[2]][[82]]
+## [[2]][[82]]$textProns
+## list()
+## 
+## [[2]][[82]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[82]]$exampleUses
+## list()
+## 
+## [[2]][[82]]$relatedWords
+## list()
+## 
+## [[2]][[82]]$labels
+## list()
+## 
+## [[2]][[82]]$citations
+## list()
+## 
+## [[2]][[82]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[82]]$sequence
+## [1] &quot;4&quot;
+## 
+## [[2]][[82]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[82]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[82]]$text
+## [1] &quot;a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds&quot;
+## 
+## [[2]][[82]]$score
+## [1] 0
+## 
+## 
+## [[2]][[83]]
+## [[2]][[83]]$textProns
+## list()
+## 
+## [[2]][[83]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[83]]$exampleUses
+## list()
+## 
+## [[2]][[83]]$relatedWords
+## list()
+## 
+## [[2]][[83]]$labels
+## list()
+## 
+## [[2]][[83]]$citations
+## list()
+## 
+## [[2]][[83]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[83]]$sequence
+## [1] &quot;5&quot;
+## 
+## [[2]][[83]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[83]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[83]]$text
+## [1] &quot;a hinged catch that fits into a notch of a ratchet to move a wheel forward or prevent it from moving backward&quot;
+## 
+## [[2]][[83]]$score
+## [1] 0
+## 
+## 
+## [[2]][[84]]
+## [[2]][[84]]$textProns
+## list()
+## 
+## [[2]][[84]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[84]]$exampleUses
+## list()
+## 
+## [[2]][[84]]$relatedWords
+## list()
+## 
+## [[2]][[84]]$labels
+## list()
+## 
+## [[2]][[84]]$citations
+## list()
+## 
+## [[2]][[84]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[84]]$sequence
+## [1] &quot;6&quot;
+## 
+## [[2]][[84]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[84]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[84]]$text
+## [1] &quot;informal term for a man&quot;
+## 
+## [[2]][[84]]$score
+## [1] 0
+## 
+## 
+## [[2]][[85]]
+## [[2]][[85]]$textProns
+## list()
+## 
+## [[2]][[85]]$sourceDictionary
+## [1] &quot;wordnet&quot;
+## 
+## [[2]][[85]]$exampleUses
+## list()
+## 
+## [[2]][[85]]$relatedWords
+## list()
+## 
+## [[2]][[85]]$labels
+## list()
+## 
+## [[2]][[85]]$citations
+## list()
+## 
+## [[2]][[85]]$word
+## [1] &quot;dog&quot;
+## 
+## [[2]][[85]]$sequence
+## [1] &quot;7&quot;
+## 
+## [[2]][[85]]$attributionText
+## [1] &quot;from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.&quot;
+## 
+## [[2]][[85]]$partOfSpeech
+## [1] &quot;noun&quot;
+## 
+## [[2]][[85]]$text
+## [1] &quot;a smooth-textured sausage of minced beef or pork usually smoked; often served on a bread roll&quot;
+## 
+## [[2]][[85]]$score
+## [1] 0
+</code></pre>
+
+</body>
+
+</html>
