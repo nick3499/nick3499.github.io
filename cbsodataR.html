@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title></title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<pre><code class="r">library(cbsodataR)
+get_data(&#39;71509ENG&#39;)
+</code></pre>
+
+<pre><code>## Writing TableInfos.csv...
+</code></pre>
+
+<pre><code>## Writing DataProperties.csv...
+</code></pre>
+
+<pre><code>## Writing CategoryGroups.csv...
+</code></pre>
+
+<pre><code>## Writing FruitFarmingRegions.csv...
+</code></pre>
+
+<pre><code>## Writing Periods.csv...
+</code></pre>
+
+<pre><code>## Retrieving data from table &#39;71509ENG&#39;
+</code></pre>
+
+<pre><code>## Done!
+</code></pre>
+
+<pre><code>##    ID FruitFarmingRegions Periods TotalAppleVarieties_1 CoxSOrangePippin_2
+## 1   0   Total Netherlands    1997                   420                 43
+## 2   1   Total Netherlands    1998                   518                 40
+## 3   2   Total Netherlands    1999                   568                 39
+## 4   3   Total Netherlands    2000                   461                 27
+## 5   4   Total Netherlands    2001                   408                 30
+## 6   5   Total Netherlands    2002                   354                 17
+## 7   6   Total Netherlands    2003                   359                 17
+## 8   7   Total Netherlands    2004                   436                 14
+## 9   8   Total Netherlands    2005                   359                 12
+## 10  9   Total Netherlands    2006                   365                 11
+## 11 10   Total Netherlands    2007                   391                  8
+## 12 11   Total Netherlands    2008                   375                  7
+## 13 12   Total Netherlands    2009                   407                  6
+## 14 13   Total Netherlands    2010                   334                  4
+## 15 14   Total Netherlands    2011                   418                  5
+## 16 15   Total Netherlands    2012                   282                  3
+## 17 16   Total Netherlands    2013                   314                  4
+## 18 17   Total Netherlands    2014                   353                  3
+## 19 18   Total Netherlands    2015                   336                  3
+## 20 19        Region North    1997                    86                 10
+## 21 20        Region North    1998                   109                  8
+## 22 21        Region North    1999                   109                  8
+## 23 22        Region North    2000                    87                  5
+## 24 23        Region North    2001                    75                  5
+## 25 24        Region North    2002                    55                  2
+## 26 25        Region North    2003                    59                  2
+## 27 26        Region North    2004                    82                  2
+## 28 27        Region North    2005                    42                  1
+## 29 28        Region North    2006                    66                  2
+## 30 29        Region North    2007                    61                  1
+## 31 30        Region North    2008                    60                  1
+## 32 31        Region North    2009                    63                  1
+## 33 32        Region North    2010                    49                  0
+## 34 33        Region North    2011                    60                  0
+## 35 34        Region North    2012                    34                  0
+## 36 35        Region North    2013                    35                  1
+## 37 36        Region North    2014                    46                  1
+## 38 37        Region North    2015                    34                  0
+## 39 38         Region West    1997                    69                  8
+## 40 39         Region West    1998                   114                 11
+## 41 40         Region West    1999                   137                 11
+## 42 41         Region West    2000                   105                 10
+## 43 42         Region West    2001                    87                  9
+## 44 43         Region West    2002                    82                  6
+## 45 44         Region West    2003                    79                  6
+## 46 45         Region West    2004                    84                  5
+## 47 46         Region West    2005                    80                  4
+## 48 47         Region West    2006                    76                  4
+## 49 48         Region West    2007                    86                  3
+## 50 49         Region West    2008                    81                  2
+## 51 50         Region West    2009                    89                  2
+## 52 51         Region West    2010                    64                  1
+## 53 52         Region West    2011                    94                  2
+## 54 53         Region West    2012                    62                  1
+## 55 54         Region West    2013                    69                  1
+## 56 55         Region West    2014                    78                  1
+## 57 56         Region West    2015                    80                  1
+## 58 57      Region Central    1997                   213                 23
+## 59 58      Region Central    1998                   229                 18
+## 60 59      Region Central    1999                   262                 17
+## 61 60      Region Central    2000                   215                 10
+## 62 61      Region Central    2001                   197                 12
+## 63 62      Region Central    2002                   165                  7
+## 64 63      Region Central    2003                   172                  7
+## 65 64      Region Central    2004                   214                  6
+## 66 65      Region Central    2005                   179                  5
+## 67 66      Region Central    2006                   176                  4
+## 68 67      Region Central    2007                   187                  3
+## 69 68      Region Central    2008                   189                  3
+## 70 69      Region Central    2009                   201                  3
+## 71 70      Region Central    2010                   173                  2
+## 72 71      Region Central    2011                   207                  2
+## 73 72      Region Central    2012                   140                  1
+## 74 73      Region Central    2013                   164                  1
+## 75 74      Region Central    2014                   179                  1
+## 76 75      Region Central    2015                   177                  1
+## 77 76        Region South    1997                    52                  2
+## 78 77        Region South    1998                    67                  4
+## 79 78        Region South    1999                    60                  3
+## 80 79        Region South    2000                    53                  2
+## 81 80        Region South    2001                    48                  3
+## 82 81        Region South    2002                    52                  1
+## 83 82        Region South    2003                    48                  2
+## 84 83        Region South    2004                    56                  1
+## 85 84        Region South    2005                    58                  2
+## 86 85        Region South    2006                    47                  1
+## 87 86        Region South    2007                    57                  1
+## 88 87        Region South    2008                    46                  1
+## 89 88        Region South    2009                    55                  1
+## 90 89        Region South    2010                    45                  0
+## 91 90        Region South    2011                    56                  1
+## 92 91        Region South    2012                    46                  0
+## 93 92        Region South    2013                    46                  0
+## 94 93        Region South    2014                    51                  0
+## 95 94        Region South    2015                    45                  1
+##    DelbarestivaleDelcorf_3 Elstar_4 GoldenDelicious_5 Jonagold_6
+## 1                        3      129                40        104
+## 2                        5      190                37        132
+## 3                        8      193                39        150
+## 4                        6      167                30        123
+## 5                        6      151                29        102
+## 6                        6      130                28         96
+## 7                        7      133                27         91
+## 8                        9      175                31        113
+## 9                        8      142                29         86
+## 10                       7      149                24         83
+## 11                       6      172                25         88
+## 12                       5      160                23         79
+## 13                       6      176                23         86
+## 14                       5      145                20         67
+## 15                       4      172                24         92
+## 16                       3      115                20         53
+## 17                       5      123                16         66
+## 18                       4      140                18         70
+## 19                       4      129                15         75
+## 20                       0       30                 5         23
+## 21                       0       45                 7         27
+## 22                       1       38                 7         31
+## 23                       0       37                 4         23
+## 24                       0       30                 4         22
+## 25                       0       23                 2         16
+## 26                       0       24                 3         17
+## 27                       0       34                 4         23
+## 28                       0       20                 3          9
+## 29                       0       27                 3         16
+## 30                       0       34                 3         12
+## 31                       0       31                 3         11
+## 32                       0       32                 3         11
+## 33                       0       26                 2         10
+## 34                       0       27                 2         16
+## 35                       0       22                 1          6
+## 36                       0       16                 2          9
+## 37                       0       23                 2         11
+## 38                       0       15                 1         10
+## 39                       0       16                 8         20
+## 40                       1       38                 8         30
+## 41                       2       43                11         40
+## 42                       2       30                 8         29
+## 43                       1       25                 7         23
+## 44                       2       25                 8         20
+## 45                       2       24                 8         16
+## 46                       3       29                 7         21
+## 47                       3       28                 7         18
+## 48                       2       26                 6         20
+## 49                       2       30                 6         21
+## 50                       2       29                 5         19
+## 51                       2       37                 5         20
+## 52                       1       30                 4         11
+## 53                       1       38                 7         18
+## 54                       1       25                 5         11
+## 55                       1       28                 4         10
+## 56                       1       30                 5         16
+## 57                       1       29                 5         16
+## 58                       2       67                18         47
+## 59                       3       86                15         56
+## 60                       4       93                14         62
+## 61                       3       81                13         57
+## 62                       3       79                12         47
+## 63                       3       62                11         47
+## 64                       4       68                10         46
+## 65                       5       89                13         55
+## 66                       4       71                12         45
+## 67                       4       75                 9         39
+## 68                       3       86                 9         43
+## 69                       3       82                 9         40
+## 70                       3       85                 9         45
+## 71                       3       71                 7         38
+## 72                       2       87                 8         47
+## 73                       1       55                 7         27
+## 74                       3       64                 5         39
+## 75                       2       73                 6         35
+## 76                       2       70                 5         42
+## 77                       0       16                 9         14
+## 78                       1       22                 6         19
+## 79                       1       19                 7         17
+## 80                       1       19                 5         13
+## 81                       1       18                 7         10
+## 82                       1       20                 7         13
+## 83                       1       17                 7         12
+## 84                       1       23                 7         14
+## 85                       1       23                 7         14
+## 86                       1       21                 6          8
+## 87                       1       22                 7         12
+## 88                       1       18                 6          9
+## 89                       1       22                 6         10
+## 90                       1       17                 6          8
+## 91                       1       20                 7         11
+## 92                       1       13                 7          9
+## 93                       1       15                 5          8
+## 94                       1       14                 5          8
+## 95                       1       14                 4          7
+##    Jonagored_7 Junami_8 Kanzi_9 RodeBoskoopRennetApple_10 Rubens_11
+## 1           34        .       .                        30         .
+## 2           42        .       .                        36         .
+## 3           48        .       .                        52         .
+## 4           39        .       .                        32         .
+## 5           35        .       .                        30         .
+## 6           40        .       .                        20         .
+## 7           42        .       .                        25         .
+## 8           54        .       0                        26         .
+## 9           46        0       0                        19         0
+## 10          46        1       2                        23         0
+## 11          49        2       5                        19         2
+## 12          46        5       6                        23         4
+## 13          49       10      11                        17         5
+## 14          33       10      15                        14         7
+## 15          40       17      17                        19         8
+## 16          21        8      14                        14         3
+## 17          26       12      17                        16         3
+## 18          30       16      19                        19         2
+## 19          23       14      19                        18         1
+## 20           8        .       .                         3         .
+## 21          10        .       .                         5         .
+## 22          10        .       .                         6         .
+## 23           9        .       .                         3         .
+## 24           7        .       .                         3         .
+## 25           8        .       .                         1         .
+## 26           9        .       .                         2         .
+## 27          14        .       0                         2         .
+## 28           5        0       0                         1         0
+## 29          10        0       0                         2         0
+## 30           7        0       0                         1         0
+## 31           7        0       0                         2         1
+## 32           8        2       0                         1         1
+## 33           4        2       1                         1         1
+## 34           4        3       1                         1         1
+## 35           1        1       1                         1         0
+## 36           1        1       1                         1         0
+## 37           2        2       1                         1         0
+## 38           1        1       1                         1         0
+## 39           5        .       .                         3         .
+## 40           7        .       .                         9         .
+## 41           6        .       .                        13         .
+## 42           5        .       .                        10         .
+## 43           7        .       .                         7         .
+## 44           9        .       .                         6         .
+## 45          11        .       .                         7         .
+## 46           9        .       0                         6         .
+## 47          11        0       0                         5         0
+## 48          10        0       0                         5         0
+## 49          16        0       0                         5         0
+## 50          14        0       1                         6         0
+## 51          14        3       1                         4         0
+## 52          10        2       1                         2         0
+## 53          17        3       1                         5         0
+## 54           9        3       1                         2         1
+## 55          10        3       2                         3         0
+## 56          10        3       4                         4         0
+## 57          12        4       3                         3         0
+## 58          16        .       .                        21         .
+## 59          20        .       .                        16         .
+## 60          28        .       .                        26         .
+## 61          21        .       .                        14         .
+## 62          16        .       .                        17         .
+## 63          18        .       .                         9         .
+## 64          17        .       .                        12         .
+## 65          26        .       0                        14         .
+## 66          25        0       0                         9         0
+## 67          23        1       1                        13         0
+## 68          21        1       4                         9         2
+## 69          20        2       6                        13         2
+## 70          23        3       9                         9         4
+## 71          15        4      11                         9         5
+## 72          15        6      13                        11         7
+## 73           8        1       8                         8         2
+## 74          11        3      11                         9         3
+## 75          15        6      10                        11         2
+## 76           8        5      13                        12         1
+## 77           4        .       .                         3         .
+## 78           5        .       .                         6         .
+## 79           4        .       .                         6         .
+## 80           4        .       .                         5         .
+## 81           4        .       .                         3         .
+## 82           5        .       .                         3         .
+## 83           5        .       .                         4         .
+## 84           5        .       0                         4         .
+## 85           5        0       0                         4         0
+## 86           3        0       1                         3         0
+## 87           5        1       1                         4         0
+## 88           5        1       1                         2         0
+## 89           5        2       1                         3         0
+## 90           5        3       2                         2         0
+## 91           4        5       2                         3         0
+## 92           3        3       4                         3         0
+## 93           3        4       3                         3         0
+## 94           3        5       4                         4         0
+## 95           3        5       3                         2         0
+##    OtherAppleVarieties_12 TotalPearVarieties_13 BeurreAlexandreLucas_14
+## 1                      37                   141                       .
+## 2                      36                   141                       .
+## 3                      39                   141                       .
+## 4                      37                   203                       .
+## 5                      25                    76                       .
+## 6                      17                   171                       .
+## 7                      17                   159                       .
+## 8                      14                   210                       7
+## 9                      17                   195                       8
+## 10                     19                   222                       7
+## 11                     15                   260                      10
+## 12                     17                   172                       6
+## 13                     18                   295                      12
+## 14                     14                   274                      15
+## 15                     19                   336                      22
+## 16                     27                   199                      12
+## 17                     26                   327                      24
+## 18                     31                   349                      20
+## 19                     34                   349                      25
+## 20                      7                    21                       .
+## 21                      7                    22                       .
+## 22                      7                    26                       .
+## 23                      6                    34                       .
+## 24                      4                    14                       .
+## 25                      3                    23                       .
+## 26                      2                    26                       .
+## 27                      3                    36                       1
+## 28                      3                    25                       1
+## 29                      6                    40                       1
+## 30                      3                    46                       1
+## 31                      4                    35                       1
+## 32                      3                    47                       1
+## 33                      3                    39                       1
+## 34                      5                    54                       1
+## 35                      1                    29                       0
+## 36                      4                    48                       1
+## 37                      4                    41                       1
+## 38                      4                    51                       2
+## 39                      7                    45                       .
+## 40                     10                    55                       .
+## 41                     11                    48                       .
+## 42                     12                    75                       .
+## 43                      7                    32                       .
+## 44                      6                    70                       .
+## 45                      6                    57                       .
+## 46                      4                    75                       3
+## 47                      4                    73                       3
+## 48                      3                    75                       3
+## 49                      3                    95                       5
+## 50                      3                    60                       3
+## 51                      4                   103                       6
+## 52                      0                    94                       8
+## 53                      0                   126                      12
+## 54                      3                    76                       7
+## 55                      5                   117                      14
+## 56                      4                   135                      11
+## 57                      6                   134                      13
+## 58                     19                    71                       .
+## 59                     16                    58                       .
+## 60                     18                    60                       .
+## 61                     15                    87                       .
+## 62                     11                    26                       .
+## 63                      7                    71                       .
+## 64                      7                    67                       .
+## 65                      6                    91                       3
+## 66                      8                    89                       4
+## 67                      7                    97                       3
+## 68                      6                   108                       4
+## 69                      9                    71                       3
+## 70                      9                   133                       5
+## 71                      8                   127                       6
+## 72                     13                   144                       9
+## 73                     21                    84                       5
+## 74                     15                   149                       9
+## 75                     18                   162                       8
+## 76                     18                   158                      10
+## 77                      4                     5                       .
+## 78                      4                     6                       .
+## 79                      3                     6                       .
+## 80                      4                     6                       .
+## 81                      2                     4                       .
+## 82                      2                     7                       .
+## 83                      1                     9                       .
+## 84                      1                     8                       0
+## 85                      2                     8                       0
+## 86                      2                    10                       0
+## 87                      2                    11                       0
+## 88                      2                     8                       0
+## 89                      2                    13                       0
+## 90                      0                    11                       0
+## 91                      0                    11                       0
+## 92                      3                     9                       0
+## 93                      2                    12                       0
+## 94                      6                    12                       0
+## 95                      6                     6                       0
+##    Conference_15 DoyenneDuComice_16 CookingPears_17 TriompheDeVienne_18
+## 1             86                 29              11                   5
+## 2             88                 24              11                   4
+## 3             95                 24               8                   4
+## 4            135                 35              14                   5
+## 5             54                  9               4                   3
+## 6            107                 30              14                   5
+## 7            125                 16               9                   3
+## 8            144                 34              15                   4
+## 9            145                 25               8                   4
+## 10           172                 26               8                   5
+## 11           200                 34               7                   5
+## 12           138                 19               4                   3
+## 13           230                 34               8                   5
+## 14           214                 26               8                   5
+## 15           260                 33               9                   4
+## 16           161                 17               5                   1
+## 17           256                 28               8                   4
+## 18           275                 30               9                   4
+## 19           275                 28               6                   3
+## 20            12                  5               2                   1
+## 21            16                  4               1                   0
+## 22            18                  6               1                   0
+## 23            25                  6               2                   0
+## 24            10                  3               0                   0
+## 25            16                  4               1                   0
+## 26            22                  2               1                   0
+## 27            25                  7               3                   0
+## 28            20                  3               1                   0
+## 29            33                  5               1                   0
+## 30            38                  6               1                   0
+## 31            29                  4               1                   0
+## 32            37                  6               1                   0
+## 33            33                  3               1                   0
+## 34            46                  5               1                   0
+## 35            24                  3               2                   1
+## 36            42                  3               0                   0
+## 37            35                  3               2                   0
+## 38            44                  4               1                   0
+## 39            26                  8               4                   2
+## 40            33                 10               4                   2
+## 41            32                  8               2                   1
+## 42            47                 14               4                   1
+## 43            23                  3               1                   1
+## 44            42                 13               5                   2
+## 45            43                  7               3                   1
+## 46            49                 14               4                   2
+## 47            51                 11               3                   2
+## 48            56                 10               2                   2
+## 49            70                 14               2                   2
+## 50            46                  8               1                   1
+## 51            75                 14               2                   2
+## 52            71                 11               2                   2
+## 53            92                 14               4                   2
+## 54            60                  7               1                   0
+## 55            84                 13               3                   2
+## 56           101                 14               3                   2
+## 57           100                 14               1                   2
+## 58            44                 15               5                   2
+## 59            35                  9               5                   2
+## 60            40                  9               4                   2
+## 61            59                 14               7                   3
+## 62            18                  3               2                   1
+## 63            44                 11               8                   2
+## 64            53                  6               4                   1
+## 65            63                 12               8                   2
+## 66            67                 10               4                   2
+## 67            74                 10               5                   3
+## 68            82                 13               4                   3
+## 69            56                  7               2                   1
+## 70           106                 13               4                   3
+## 71           100                 11               5                   3
+## 72           111                 13               4                   2
+## 73            68                  7               2                   0
+## 74           118                 11               5                   2
+## 75           129                 13               4                   2
+## 76           126                 10               3                   1
+## 77             3                  1               0                   0
+## 78             4                  1               0                   0
+## 79             5                  1               0                   0
+## 80             5                  1               0                   0
+## 81             4                  0               0                   0
+## 82             6                  1               0                   0
+## 83             8                  1               0                   0
+## 84             7                  1               0                   0
+## 85             7                  1               0                   0
+## 86             9                  1               0                   0
+## 87            10                  1               0                   0
+## 88             8                  0               0                   0
+## 89            12                  1               0                   0
+## 90            10                  1               0                   0
+## 91            10                  1               0                   0
+## 92             9                  0               0                   0
+## 93            11                  0               0                   0
+## 94            11                  1               0                   0
+## 95             5                  0               0                   0
+##    OtherPearVarieties_19 TotalAppleVarieties_20 CoxSOrangePippin_21
+## 1                     10                  15191                1502
+## 2                     14                  14682                1355
+## 3                     10                  14191                1205
+## 4                     14                  12839                 991
+## 5                      6                  11718                 790
+## 6                     15                  11177                 666
+## 7                      6                  10296                 495
+## 8                      6                  10217                 395
+## 9                      5                   9737                 318
+## 10                     4                   9562                 270
+## 11                     4                   9380                 255
+## 12                     3                   9302                 194
+## 13                     6                   9129                 160
+## 14                     6                   8681                 121
+## 15                     8                   8266                 121
+## 16                     3                   7948                 110
+## 17                     8                   7906                 110
+## 18                    11                   7850                  81
+## 19                    12                   7600                  80
+## 20                     1                   2798                 294
+## 21                     1                   2587                 251
+## 22                     1                   2545                 230
+## 23                     0                   2154                 169
+## 24                     1                   1879                 118
+## 25                     1                   1800                 100
+## 26                     1                   1650                  70
+## 27                     0                   1614                  53
+## 28                     0                   1497                  39
+## 29                     0                   1438                  44
+## 30                     0                   1312                  30
+## 31                     0                   1336                  32
+## 32                     1                   1322                  21
+## 33                     0                   1246                  11
+## 34                     0                   1091                  10
+## 35                     0                   1046                  16
+## 36                     2                    988                  25
+## 37                     1                    942                  15
+## 38                     1                    768                  13
+## 39                     5                   3510                 429
+## 40                     7                   3316                 387
+## 41                     5                   3176                 349
+## 42                     9                   2872                 310
+## 43                     3                   2654                 268
+## 44                     9                   2551                 235
+## 45                     3                   2301                 178
+## 46                     3                   2249                 155
+## 47                     3                   2127                 112
+## 48                     2                   2130                  91
+## 49                     2                   2111                  84
+## 50                     1                   2129                  65
+## 51                     2                   2061                  56
+## 52                     0                   1920                  43
+## 53                     0                   1820                  46
+## 54                     1                   1750                  35
+## 55                     0                   1757                  38
+## 56                     5                   1736                  30
+## 57                     4                   1704                  22
+## 58                     4                   7014                 632
+## 59                     5                   6994                 591
+## 60                     5                   6721                 516
+## 61                     5                   6129                 422
+## 62                     2                   5571                 334
+## 63                     5                   5225                 275
+## 64                     2                   4884                 203
+## 65                     3                   4928                 155
+## 66                     2                   4706                 135
+## 67                     2                   4640                 109
+## 68                     2                   4603                 112
+## 69                     1                   4554                  76
+## 70                     3                   4467                  68
+## 71                     3                   4232                  55
+## 72                     8                   4063                  50
+## 73                     2                   3930                  40
+## 74                     4                   3943                  34
+## 75                     6                   3985                  29
+## 76                     7                   3954                  21
+## 77                     0                   1869                 147
+## 78                     0                   1785                 126
+## 79                     0                   1749                 110
+## 80                     0                   1684                  90
+## 81                     0                   1614                  70
+## 82                     0                   1601                  56
+## 83                     0                   1461                  44
+## 84                     0                   1426                  32
+## 85                     0                   1407                  32
+## 86                     0                   1354                  26
+## 87                     0                   1354                  29
+## 88                     0                   1284                  22
+## 89                     0                   1280                  15
+## 90                     0                   1283                  12
+## 91                     0                   1292                  15
+## 92                     0                   1222                  18
+## 93                     2                   1217                  13
+## 94                     0                   1187                   7
+## 95                     0                   1174                  24
+##    DelbarestivaleDelcorf_22 Elstar_23 GoldenDelicious_24 Jonagold_25
+## 1                       211      5126               1192        3440
+## 2                       213      5145               1102        3337
+## 3                       234      5139               1010        3237
+## 4                       250      4773                914        2973
+## 5                       280      4477                800        2659
+## 6                       318      4374                763        2468
+## 7                       305      4284                665        2283
+## 8                       286      4472                661        2293
+## 9                       257      4377                646        1990
+## 10                      246      4321                574        1782
+## 11                      226      4220                536        1558
+## 12                      195      3964                502        1523
+## 13                      186      3960                500        1470
+## 14                      168      3598                469        1520
+## 15                      143      3367                473        1459
+## 16                      143      3289                450        1375
+## 17                      150      3191                430        1319
+## 18                      150      3154                385        1319
+## 19                      150      2954                350        1280
+## 20                       22      1046                207         607
+## 21                       23      1006                167         570
+## 22                       24      1020                157         561
+## 23                       22       883                124         482
+## 24                       21       791                 88         453
+## 25                       20       779                 70         449
+## 26                       17       760                 63         411
+## 27                       14       776                 65         364
+## 28                       17       766                 62         329
+## 29                       12       709                 54         266
+## 30                        8       724                 56         190
+## 31                       13       666                 57         182
+## 32                        7       662                 53         195
+## 33                        5       611                 48         222
+## 34                        9       531                 41         204
+## 35                       10       601                 36         206
+## 36                        5       470                 56         181
+## 37                       13       480                 36         186
+## 38                        7       349                 18         166
+## 39                       50      1032                315         774
+## 40                       50      1011                281         753
+## 41                       61       989                257         757
+## 42                       64       907                231         709
+## 43                       74       843                201         598
+## 44                       88       817                193         514
+## 45                       86       796                169         466
+## 46                       84       823                175         496
+## 47                       77       844                146         412
+## 48                       60       875                136         426
+## 49                       60       817                137         351
+## 50                       57       825                115         364
+## 51                       58       854                117         346
+## 52                       43       783                118         296
+## 53                       38       746                133         311
+## 54                       36       711                111         299
+## 55                       41       687                115         225
+## 56                       21       668                107         307
+## 57                       34       644                 99         282
+## 58                      109      2445                477        1610
+## 59                      109      2533                465        1571
+## 60                      117      2515                421        1481
+## 61                      130      2357                381        1396
+## 62                      145      2216                332        1266
+## 63                      167      2113                318        1196
+## 64                      160      2096                266        1122
+## 65                      150      2261                257        1120
+## 66                      121      2136                272         978
+## 67                      137      2139                231         847
+## 68                      119      2118                202         804
+## 69                       95      1965                198         766
+## 70                       92      1924                181         763
+## 71                       87      1720                164         812
+## 72                       72      1654                154         731
+## 73                       61      1578                152         684
+## 74                       71      1619                133         743
+## 75                       72      1657                128         657
+## 76                       69      1619                135         685
+## 77                       30       603                193         449
+## 78                       31       595                189         443
+## 79                       32       615                175         439
+## 80                       34       626                178         386
+## 81                       40       627                179         342
+## 82                       43       665                182         309
+## 83                       42       632                167         283
+## 84                       38       612                164         313
+## 85                       42       631                166         271
+## 86                       37       598                153         243
+## 87                       39       561                141         213
+## 88                       30       509                131         211
+## 89                       29       520                149         167
+## 90                       33       484                139         190
+## 91                       25       437                145         214
+## 92                       35       399                151         187
+## 93                       32       416                126         170
+## 94                       44       349                115         169
+## 95                       40       342                 98         147
+##    Jonagored_26 Junami_27 Kanzi_28 RodeBoskoopRennetApple_29 Rubens_30
+## 1          1158         .        .                      1281         .
+## 2          1127         .        .                      1238         .
+## 3          1097         .        .                      1183         .
+## 4           977         .        .                      1028         .
+## 5          1009         .        .                       906         .
+## 6          1077         .        .                       809         .
+## 7           995         .        .                       680         .
+## 8          1005         .        8                       632         .
+## 9          1019        26       51                       606        31
+## 10          956       101      192                       572        72
+## 11          900       259      306                       615       145
+## 12          852       345      311                       627       186
+## 13          835       391      350                       574       183
+## 14          753       429      380                       476       192
+## 15          624       442      410                       442       192
+## 16          470       445      408                       453       170
+## 17          509       450      414                       473       109
+## 18          509       456      479                       424        77
+## 19          489       460      495                       423        57
+## 20          251         .        .                       181         .
+## 21          239         .        .                       163         .
+## 22          237         .        .                       152         .
+## 23          225         .        .                       111         .
+## 24          204         .        .                        86         .
+## 25          194         .        .                        74         .
+## 26          178         .        .                        55         .
+## 27          218         .        0                        41         .
+## 28          143         0        0                        39         0
+## 29          165         2        3                        34        22
+## 30          129        12       11                        44        23
+## 31          106        72       16                        30        34
+## 32          133        78       14                        33        34
+## 33           89        68       17                        31        22
+## 34           53        72       25                        14        16
+## 35           21        58       31                        21         2
+## 36           41        35       22                        28         2
+## 37           38        46       20                        21         7
+## 38           18        34       31                        12         0
+## 39          223         .        .                       316         .
+## 40          192         .        .                       307         .
+## 41          169         .        .                       294         .
+## 42          113         .        .                       265         .
+## 43          187         .        .                       243         .
+## 44          265         .        .                       221         .
+## 45          241         .        .                       185         .
+## 46          205         .        0                       169         .
+## 47          256        14        2                       158         4
+## 48          246        23       22                       141        11
+## 49          287        83       33                       156        25
+## 50          259        96       38                       158        25
+## 51          241       107       39                       129        25
+## 52          278       115       29                       107        20
+## 53          226        83       29                       100         1
+## 54          193       163       19                        77        39
+## 55          197       142       62                       106        10
+## 56          173       100      109                        74         6
+## 57          224       107       59                        76         0
+## 58          543         .        .                       608         .
+## 59          571         .        .                       601         .
+## 60          579         .        .                       576         .
+## 61          518         .        .                       503         .
+## 62          492         .        .                       440         .
+## 63          485         .        .                       384         .
+## 64          455         .        .                       331         .
+## 65          459         .        8                       321         .
+## 66          518        10       40                       301        26
+## 67          465        31      132                       308        38
+## 68          389        79      212                       318        92
+## 69          369       113      277                       364       129
+## 70          371       135      286                       297       131
+## 71          296       110      254                       270       150
+## 72          260       154      291                       258       173
+## 73          185        77      268                       262       129
+## 74          211       109      256                       263        97
+## 75          249       163      249                       263        60
+## 76          163       150      350                       270        57
+## 77          140         .        .                       176         .
+## 78          125         .        .                       167         .
+## 79          111         .        .                       161         .
+## 80          121         .        .                       149         .
+## 81          126         .        .                       137         .
+## 82          133         .        .                       130         .
+## 83          122         .        .                       109         .
+## 84          123         .        .                       101         .
+## 85          102         2        9                       108         1
+## 86           80        45       35                        89         1
+## 87           95        85       50                        97         5
+## 88          118        83       50                        76         2
+## 89           90        88       51                       115         0
+## 90           90       136       80                        68         0
+## 91           85       133       65                        70         2
+## 92           71       146       90                        93         0
+## 93           60       163       74                        76         0
+## 94           50       147      101                        66         5
+## 95           83       169       55                        65         0
+##    OtherAppleVarieties_31 TotalPearVarieties_32 BeurreAlexandreLucas_33
+## 1                    1281                  6026                       .
+## 2                    1165                  5939                       .
+## 3                    1086                  6020                       .
+## 4                     933                  6019                       .
+## 5                     797                  6097                       .
+## 6                     702                  6329                       .
+## 7                     589                  6386                       .
+## 8                     465                  6493                     193
+## 9                     416                  6692                     251
+## 10                    476                  6914                     211
+## 11                    360                  7296                     263
+## 12                    603                  7476                     326
+## 13                    520                  7800                     362
+## 14                    576                  7995                     428
+## 15                    592                  8203                     450
+## 16                    635                  8169                     450
+## 17                    751                  8509                     500
+## 18                    816                  8603                     514
+## 19                    862                  9234                     515
+## 20                    190                   849                       .
+## 21                    168                   823                       .
+## 22                    164                   887                       .
+## 23                    138                   847                       .
+## 24                    118                   920                       .
+## 25                    114                   907                       .
+## 26                     96                   920                       .
+## 27                     83                   961                      16
+## 28                    102                   953                      26
+## 29                    127                  1027                      24
+## 30                     85                  1101                      14
+## 31                    128                  1107                      39
+## 32                     92                  1127                      32
+## 33                    121                  1142                      28
+## 34                    124                  1161                      20
+## 35                     44                  1112                      14
+## 36                    123                  1183                      17
+## 37                     79                  1085                      31
+## 38                    120                  1218                      43
+## 39                    370                  2338                       .
+## 40                    334                  2261                       .
+## 41                    300                  2264                       .
+## 42                    273                  2296                       .
+## 43                    240                  2262                       .
+## 44                    218                  2360                       .
+## 45                    180                  2420                       .
+## 46                    142                  2458                      98
+## 47                    102                  2583                     131
+## 48                     99                  2583                     113
+## 49                     78                  2720                     166
+## 50                    127                  2809                     167
+## 51                     89                  2891                     188
+## 52                     87                  2997                     239
+## 53                    104                  3092                     248
+## 54                     67                  3053                     262
+## 55                    134                  3235                     301
+## 56                    143                  3340                     277
+## 57                    157                  3637                     284
+## 58                    589                  2561                       .
+## 59                    553                  2587                       .
+## 60                    516                  2608                       .
+## 61                    422                  2617                       .
+## 62                    346                  2652                       .
+## 63                    287                  2797                       .
+## 64                    251                  2766                       .
+## 65                    197                  2821                      78
+## 66                    169                  2911                      93
+## 67                    203                  3039                      73
+## 68                    158                  3204                      83
+## 69                    202                  3258                     118
+## 70                    219                  3450                     142
+## 71                    315                  3544                     161
+## 72                    274                  3645                     183
+## 73                    494                  3684                     174
+## 74                    407                  3781                     181
+## 75                    459                  3869                     205
+## 76                    435                  4077                     187
+## 77                    132                   278                       .
+## 78                    110                   268                       .
+## 79                    106                   261                       .
+## 80                    100                   259                       .
+## 81                     93                   263                       .
+## 82                     83                   265                       .
+## 83                     62                   280                       .
+## 84                     43                   253                       1
+## 85                     43                   245                       1
+## 86                     47                   265                       1
+## 87                     39                   271                       0
+## 88                     52                   302                       0
+## 89                     57                   332                       0
+## 90                     52                   311                       0
+## 91                     90                   305                       0
+## 92                     32                   319                       0
+## 93                     87                   310                       0
+## 94                    135                   310                       0
+## 95                    150                   302                       1
+##    Conference_34 DoyenneDuComice_35 CookingPears_36 TriompheDeVienne_37
+## 1           3445               1274             549                 213
+## 2           3463               1230             523                 212
+## 3           3590               1220             509                 211
+## 4           3661               1172             493                 208
+## 5           3804               1123             484                 211
+## 6           4035               1119             488                 213
+## 7           4261               1079             440                 190
+## 8           4507               1063             358                 160
+## 9           4697               1052             319                 178
+## 10          5073               1030             263                 160
+## 11          5444               1000             254                 161
+## 12          5662                936             232                 132
+## 13          5877                935             255                 135
+## 14          5888                968             260                 142
+## 15          6024                966             303                 120
+## 16          6114                880             256                 107
+## 17          6364                859             248                 105
+## 18          6447                859             273                 100
+## 19          6974                914             270                 106
+## 20           499                202              70                  18
+## 21           498                190              66                  16
+## 22           551                199              68                  16
+## 23           543                183              64                  12
+## 24           607                194              68                  10
+## 25           613                188              64                   7
+## 26           645                175              59                   6
+## 27           685                181              55                   7
+## 28           681                157              58                   8
+## 29           764                175              41                   4
+## 30           865                170              36                   0
+## 31           847                156              44                   2
+## 32           877                145              46                   2
+## 33           883                133              36                   3
+## 34           902                134              56                   1
+## 35           910                117              38                   3
+## 36           969                116              25                   5
+## 37           814                131              56                   2
+## 38           985                109              44                   1
+## 39          1303                519             184                  80
+## 40          1276                493             172                  80
+## 41          1303                484             167                  79
+## 42          1339                474             163                  81
+## 43          1340                448             150                  83
+## 44          1418                456             149                  85
+## 45          1532                459             137                  79
+## 46          1631                455             102                  66
+## 47          1716                459              98                  83
+## 48          1813                427              78                  67
+## 49          1914                425              78                  69
+## 50          2041                412              69                  59
+## 51          2062                426              91                  55
+## 52          2080                452              90                  61
+## 53          2231                406              97                  46
+## 54          2115                387              86                  45
+## 55          2239                420              89                  47
+## 56          2420                362              99                  47
+## 57          2621                443              82                  59
+## 58          1477                494             276                 106
+## 59          1521                494             268                 108
+## 60          1566                488             259                 109
+## 61          1602                469             254                 110
+## 62          1669                437             256                 112
+## 63          1806                432             268                 115
+## 64          1863                405             238                 101
+## 65          1978                401             197                  83
+## 66          2084                412             161                  86
+## 67          2273                399             143                  84
+## 68          2429                380             139                  89
+## 69          2500                346             119                  69
+## 70          2649                336             117                  73
+## 71          2653                359             132                  75
+## 72          2625                398             147                  70
+## 73          2800                353             128                  57
+## 74          2876                310             129                  54
+## 75          2941                343             114                  47
+## 76          3119                341             138                  44
+## 77           166                 59              19                   9
+## 78           168                 53              17                   8
+## 79           170                 49              15                   7
+## 80           177                 46              12                   5
+## 81           188                 44              10                   6
+## 82           198                 43               7                   6
+## 83           221                 40               6                   4
+## 84           213                 26               4                   4
+## 85           216                 24               2                   1
+## 86           223                 29               1                   5
+## 87           236                 25               1                   3
+## 88           274                 23               0                   2
+## 89           290                 28               1                   5
+## 90           271                 25               2                   3
+## 91           267                 28               3                   3
+## 92           289                 24               5                   2
+## 93           280                 14               5                   1
+## 94           272                 23               5                   4
+## 95           249                 21               6                   2
+##    OtherPearVarieties_38
+## 1                    545
+## 2                    511
+## 3                    490
+## 4                    485
+## 5                    475
+## 6                    474
+## 7                    416
+## 8                    212
+## 9                    195
+## 10                   177
+## 11                   174
+## 12                   187
+## 13                   235
+## 14                   309
+## 15                   340
+## 16                   362
+## 17                   434
+## 18                   410
+## 19                   455
+## 20                    60
+## 21                    53
+## 22                    53
+## 23                    45
+## 24                    41
+## 25                    35
+## 26                    35
+## 27                    17
+## 28                    23
+## 29                    19
+## 30                    16
+## 31                    18
+## 32                    25
+## 33                    60
+## 34                    61
+## 35                    39
+## 36                    51
+## 37                    50
+## 38                    36
+## 39                   252
+## 40                   240
+## 41                   231
+## 42                   239
+## 43                   241
+## 44                   252
+## 45                   213
+## 46                   106
+## 47                    96
+## 48                    85
+## 49                    68
+## 50                    61
+## 51                    69
+## 52                    74
+## 53                    52
+## 54                   149
+## 55                   140
+## 56                   134
+## 57                   148
+## 58                   208
+## 59                   196
+## 60                   186
+## 61                   182
+## 62                   178
+## 63                   176
+## 64                   159
+## 65                    84
+## 66                    75
+## 67                    67
+## 68                    84
+## 69                   106
+## 70                   132
+## 71                   165
+## 72                   222
+## 73                   171
+## 74                   231
+## 75                   219
+## 76                   248
+## 77                    25
+## 78                    22
+## 79                    20
+## 80                    19
+## 81                    15
+## 82                    11
+## 83                     9
+## 84                     5
+## 85                     1
+## 86                     6
+## 87                     6
+## 88                     2
+## 89                     9
+## 90                    10
+## 91                     6
+## 92                     3
+## 93                    12
+## 94                     6
+## 95                    23
+</code></pre>
+
+</body>
+
+</html>
