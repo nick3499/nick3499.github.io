@@ -1,6 +1,6 @@
 # nick3499.github.io
 
-## Scripts: Python and R
+## R Markdown -> HTML
 
 ### Navigation
  - [Index | nick3499.github.io](https://nick3499.github.io/)
