@@ -24,6 +24,7 @@ render('foo.Rmd')
 ```
 
 ### Get environment variable: API key
+ - store API key in project directory's `.Renviron` file
 ```{r}
 key <- Sys.getenv('API_KEY')
 ```
