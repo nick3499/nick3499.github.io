@@ -22,3 +22,8 @@ markdownToHTML('foo.md', 'foo.html')
 library(rmarkdown)
 render('foo.Rmd')
 ```
+
+### Get environment variable: API key
+```{r}
+key <- Sys.getenv('API_KEY')
+```
