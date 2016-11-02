@@ -10,11 +10,15 @@
  - store API key in `.Renviron` and use `Sys.getenv()` to get it
 
 ### knitr, markdown (graph images: no)
+```{r}
 library(knitr)
 library(markdown)
 knit('foo.Rmd')
 markdownToHTML('foo.md', 'foo.html')
+```
 
 ### rmarkdown (graph images: yes)
+```{r}
 library(rmarkdown)
 render('foo.Rmd')
+```
