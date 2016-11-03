@@ -8,7 +8,7 @@
 ### Notes
  - since `foo.html` is all that will be listed in `<nav>`, such files as `.md`, `.Rmd`, `.Renviron`, etc. have been excluded.
  - store API key in `.Renviron` and use `Sys.getenv()` to get it.
- - there may be differences between API results in Rscript, R Markdown, and R interpreter, so markdown may be added manually.
+ - there may be differences between API results in Rscript, R Markdown, and R interpreter, so results may be added manually.
 
 ### knitr, markdown (graph images: no)
 ```{r}
