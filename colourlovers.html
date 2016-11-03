@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -201,62 +202,57 @@ hr {
 </head>
 
 <body>
-
 <pre><code class="r"># colourlovers.com API
 library(colourlovers)
 </code></pre>
 
-<pre><code class="r"># for catching error null
-e <- function(e){}
-# vignette does not use '{}'
-# otherwise, press enter key in R interp.
+<pre><code class="r"># error=e
+e &lt;- function(e) NULL
 </code></pre>
 
 <pre><code class="r"># list random color
-tryCatch(clcolors('random'), error=e)
+tryCatch(clcolors(&#39;random&#39;), error=e)
 </code></pre>
 
-<pre><code>Pattern ID:      4243144 
-Title:           Space Water 
-Created by user: COLOURlover 
-Date created:    2011-09-01 00:11:26 
-Views:           78 
-Votes:           2 
-Comments:        0 
-Hearts:          0 
-Rank:            0 
-URL:             http://www.colourlovers.com/color/248AA1/Space_Water 
-Image URL:       
-Colors:          #248AA1 
+<pre><code>## Pattern ID:      8609181 
+## Title:           56D867 
+## Created by user: AlyssaBo 
+## Date created:    2016-03-27 18:21:50 
+## Views:           4 
+## Votes:           0 
+## Comments:        0 
+## Hearts:          0 
+## Rank:            0 
+## URL:             http://www.colourlovers.com/color/56D867/56D867 
+## Image URL:       
+## Colors:          #56D867
 </code></pre>
 
 <pre><code class="r"># list specific color
-tryCatch(clcolor('176543'), error=e)
+tryCatch(clcolor(&#39;176543&#39;), error=e)
 </code></pre>
 
-<pre><code>Pattern ID:      7885972 
-Title:           fa-green-dark 
-Created by user: Flash Gordon 
-Date created:    2015-02-25 11:35:37 
-Views:           11 
-Votes:           0 
-Comments:        0 
-Hearts:          0 
-Rank:            0 
-URL:             http://www.colourlovers.com/color/176543/fa-green-dark 
-Image URL:       
-Colors:          #176543 
+<pre><code>## Pattern ID:      7885972 
+## Title:           fa-green-dark 
+## Created by user: Flash Gordon 
+## Date created:    2015-02-25 11:35:37 
+## Views:           11 
+## Votes:           0 
+## Comments:        0 
+## Hearts:          0 
+## Rank:            0 
+## URL:             http://www.colourlovers.com/color/176543/fa-green-dark 
+## Image URL:       
+## Colors:          #176543
 </code></pre>
 
-<pre><code class="r"># plot specific color
-co <- tryCatch(clcolor(rgb(0,0,1), fmt='json'), error=e)
+<pre><code class="r"># plot specific color 
+co &lt;- tryCatch(clcolor(rgb(0,0,1), fmt=&#39;json&#39;), error=e)
 if(!is.null(co)) plot(co)
 </code></pre>
 
-<pre><code># [plot popup]
-</code></pre>
+<p><img src="data:image/png;base64,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" alt="plot of chunk plot_color"/></p>
 
 </body>
 
 </html>
-
