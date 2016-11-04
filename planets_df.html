@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,28 +204,28 @@ hr {
 <body>
 <pre><code class="r"># planetary vectors
 planets  &lt;- c(&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Mars&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;)
-type     &lt;- c(&quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, 
+type     &lt;- c(&quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;,
               &quot;Gas giant&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;)
 diameter &lt;- c(0.383, 0.950, 1, 0.532, 10.863, 9.001, 3.968, 3.856)
 rotation &lt;- c(58.646, -243.025, 1, 1.026, 0.414, 0.440, -0.718, 0.671)
-rings    &lt;- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 gravity  &lt;- c(0.380, 0.904, 1, 0.376, 2.528, 1.065, 0.886, 1.140)
+rings    &lt;- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 </code></pre>
 
 <pre><code class="r"># data frame
-planets_df &lt;- data.frame(planets, type_factor, diameter, rotation, rings, gravity, stringsAsFactors=FALSE)
+planets_df &lt;- data.frame(planets, type, diameter, rotation, gravity, rings, stringsAsFactors=FALSE)
 print(planets_df)
 </code></pre>
 
-<pre><code>##   planets        type_factor diameter rotation rings gravity
-## 1 Mercury Terrestrial planet    0.383   58.646 FALSE   0.380
-## 2   Venus Terrestrial planet    0.950 -243.025 FALSE   0.904
-## 3   Earth Terrestrial planet    1.000    1.000 FALSE   1.000
-## 4    Mars Terrestrial planet    0.532    1.026 FALSE   0.376
-## 5 Jupiter          Gas giant   10.863    0.414  TRUE   2.528
-## 6  Saturn          Gas giant    9.001    0.440  TRUE   1.065
-## 7  Uranus          Gas giant    3.968   -0.718  TRUE   0.886
-## 8 Neptune          Gas giant    3.856    0.671  TRUE   1.140
+<pre><code>##   planets               type diameter rotation gravity rings
+## 1 Mercury Terrestrial planet    0.383   58.646   0.380 FALSE
+## 2   Venus Terrestrial planet    0.950 -243.025   0.904 FALSE
+## 3   Earth Terrestrial planet    1.000    1.000   1.000 FALSE
+## 4    Mars Terrestrial planet    0.532    1.026   0.376 FALSE
+## 5 Jupiter          Gas giant   10.863    0.414   2.528  TRUE
+## 6  Saturn          Gas giant    9.001    0.440   1.065  TRUE
+## 7  Uranus          Gas giant    3.968   -0.718   0.886  TRUE
+## 8 Neptune          Gas giant    3.856    0.671   1.140  TRUE
 </code></pre>
 
 </body>
