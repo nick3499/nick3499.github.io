@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p#demo {
+            font-size: 700%;
+            font-family: Helvetica, Arial, Sans-Serif;
+        }
+        p#title {
+            font-size: 150%;
+        }
+        .button {
+            font-size: 200%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="title">Click to mark current hours, minutes and seconds.</p>
+    <button class="button" onclick="markTime()">Mark Time</button>
+    <p id="demo"></p>
+    <script type="text/javascript">
+        // add leading zeros, e.g. 09:00
+        function leadZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        // logic for 'Mark Time' button
+        function markTime() {
+            var d = new Date();
+            var t = document.getElementById('demo');
+            var h = leadZero(d.getHours());
+            var m = leadZero(d.getMinutes());
+            var s = leadZero(d.getSeconds());
+            t.innerHTML = `${h}:${m}:${s}`;
+        }
+    </script>
+</body>
+</html>
