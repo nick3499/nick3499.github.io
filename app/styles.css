@@ -1,0 +1,13 @@
+.card {
+  display: block;
+  float: left;
+  margin-left: 80px;
+  width: 15%;
+}
+.card-divider {
+  color: #000080;
+  background-color: #00FFFF;
+}
+.card-section {
+  color: #008000;
+}
