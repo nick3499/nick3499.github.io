@@ -4,6 +4,7 @@
 
 ### Navigation
  - [Index | nick3499.github.io](https://nick3499.github.io/)
+ (directory structure currently being modified)
 
 ### Notes
  - since `foo.html` is all that will be listed in `<nav>`, such files as `.md`, `.Rmd`, `.Renviron`, etc. have been excluded.
