@@ -4,6 +4,31 @@
   <title>Current Weather</title>
   <link rel="stylesheet" href="./css/master.css">
   <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+  <style>
+    body {
+      background: url("../img/abstract_background.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      font-family: 'Rokkitt', serif;
+      font-size: 120%;
+    }
+    h3 {
+      margin-left: 20px;
+      color: cyan;
+    }
+    p {
+      margin-left: 10px;
+      padding: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: white;
+    }
+    p > span {
+      color: cyan;
+    }
+  </style>
 </head>
 
 <body>
@@ -33,11 +58,11 @@
     <p><span>Leaf Wetness:</span> {{ results.current_observation.leaf_wetness }}</p>
   </div>
 
-  <script src="./lib/vue.js"></script>
-  <script src="./lib/axios.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
   <script>
-  const url = 'http://api.wunderground.com/api/f563db7bf2b20c6e/conditions/q/IL/pws:KILMORRI2.json'
+  const url = 'http://api.wunderground.com/api/ad8ef392afe1e78f/conditions/q/IL/pws:KILMORRI2.json'
   const vm = new Vue({
     el: '#app',
     data: {
