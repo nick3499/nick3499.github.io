@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swanson Quote</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+  button {
+    color: blue;
+    font-size: 110%;
+  }
+  </style>
+</head>
+<body>
+  <div>
+    <h3>Ron Swanson said:</h3>
+    <button id="get_quote">Fetch Quote</button>
+  </div>
+  <script>
+  $('#get_quote').click(function() {
+    fetch("http://ron-swanson-quotes.herokuapp.com/v2/quotes")
+    .then(res => res.json())
+    .then((data) => {
+      this.friends = data
+      $('button').text(data);
+    })
+  });
+  </script>
+</body>
+</html>
