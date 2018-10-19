@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Get local IP info stats from ipinfo.io API.">
+  <title>Local IP Info</title>
+  <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+  <style>
+  body {
+    font-family: 'Rokkitt', serif;
+    margin: 0;
+  }
+  table.darkTable {
+    border: 2px solid #000000;
+    background-color: #515151;
+    border-collapse: collapse;
+  }
+  table.darkTable td {
+    border: 1px solid #4A4A4A;
+    padding: 6px 6px;
+    font-size: 28px;
+    color: #FFFF22;
+  }
+  table.darkTable tr:nth-child(even) {
+    background: #000000;
+  }
+  h1 {
+    margin-left: 50px;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1><span style="color:#0000ff">Local IP Info</span></h1>
+    <table class="darkTable">
+      <tr><td>IP number:</td><td>{{ results.ip }}</td></tr>
+      <tr><td>Host address:</td><td>{{ results.hostname }}</td></tr>
+      <tr><td>City name:</td><td>{{ results.city }}</td></tr>
+      <tr><td>Region name:</td><td>{{ results.region }}</td></tr>
+      <tr><td>Country code:</td><td>{{ results.country }}</td></tr>
+      <tr><td>GPS:</td><td>{{ results.loc }}</td></tr>
+      <tr><td>Postal code:</td><td>{{ results.postal }}</td></tr>
+      <tr><td>Organization:</td><td>{{ results.org }}</td></tr>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script>
+  const url = 'http://ipinfo.io/json'
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      results: []
+    },
+    mounted() {
+      axios.get(url).then(response => {
+        this.results = response.data
+      })
+    }
+  })
+  </script>
+
+</body>
+</html>
