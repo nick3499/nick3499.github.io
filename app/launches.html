@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Launches | SpaceX</title>
+  <style>
+    div {
+      padding: 10px;
+      margin: 10px;
+      background-color: #BBFFFF;
+      box-shadow: 5px 5px 5px #D8D8D8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Launches | SpaceX</h1>
+  <hr>
+  {% for i in data %}
+  <div>
+    <h3>Mission</h3>
+    <table>
+      <tr><td>Mission patch:</td><td><img src="{{ i.links.mission_patch_small }}"></td></tr>
+      <tr><td>Flight number:</td><td>{{ i.flight_number }} ({{ i.launch_date_local[0:10] }})</td></tr>
+      <tr><td>Name:</td><td>{{ i.mission_name }}</td></tr>
+    </table>
+    <h3>Rocket</h3>
+    <table>
+      <tr><td>Name:</td><td>{{ i.rocket.rocket_name }}</td></tr>
+      <tr><td>Type:</td><td>{{ i.rocket.rocket_type }}</td></tr>
+    </table>
+    <h3>Payload</h3>
+    <table>
+      <tr><td>Type:</td><td>{{ i.rocket.second_stage.payloads.0.payload_type }}</td></tr>
+      <tr><td>ID:</td><td>{{ i.rocket.second_stage.payloads.0.payload_id }}</td></tr>
+      <tr><td>Customer(s):</td><td>{{ ', '.join(i.rocket.second_stage.payloads.0.customers) }}</td></tr>
+      <tr><td>Nationality:</td><td>{{ i.rocket.second_stage.payloads.0.nationality }}</td></tr>
+      <tr><td>Manufacturer:</td><td>{{ i.rocket.second_stage.payloads.0.manufacturer }}</td></tr>
+    </table>
+    <h3>Orbit</h3>
+    <table>
+      <tr><td>Type:</td><td>{{ i.rocket.second_stage.payloads.0.orbit }}</td></tr>
+      <tr><td>Ref. sys.:</td><td>{{ i.rocket.second_stage.payloads.0.orbit_params.reference_system }}</td></tr>
+      <tr><td>Regime:</td><td>{{ i.rocket.second_stage.payloads.0.orbit_params.regime }}</td></tr>
+    </table>
+    <h3>Links</h3>
+    <ul>
+      <li><a href="{{ i.links.article_link }}">Article</a></li>
+      <li><a href="{{ i.links.wikipedia }}">Wikipedia</a></li>
+      <li><a href="{{ i.links.video_link }}">Video</a></li>
+    </ul>
+    <h3>Details</h3>
+    <tr><td>Details:</td><td>{{ i.details }}</td></tr>
+  </div>
+  {% endfor %}
+</body>
+</html>
