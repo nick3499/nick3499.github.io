@@ -40,5 +40,3 @@ key <- Sys.getenv('API_KEY')
 ```
 jupyter nbconvert --to html foo.ipynb
 ```
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R72LISM)
